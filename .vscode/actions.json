@@ -1,0 +1,33 @@
+[
+    {
+      "name": "Compile with CRTBNDRPG 🔨",
+      "command": "CRTBNDRPG PGM(&CURLIB/&NAME) SRCSTMF('&RELATIVEPATH') OPTION(*EVENTF) DBGVIEW(*SOURCE) TGTRLS(*CURRENT) TGTCCSID(*JOB)",
+      "environment": "ile",
+      "deployFirst": true,
+      "extensions": [
+        "RPGLE"
+      ]
+    },
+    {
+      "name": "Call program",
+      "command": "CALL &CURLIB/&NAME",
+      "environment": "ile",
+      "deployFirst": true,
+      "extensions": [
+        "RPGLE"
+      ]
+    },
+    {
+      "name": "Build and deploy with bob 🔨",
+      "command": "/QOpenSys/pkgs/bin/makei build -e verlibcsy=&CURLIB",
+      "environment": "pase",
+      "deployFirst": true,
+      "extensions": [
+        "GLOBAL"
+      ],
+      "postDownload": [
+        ".logs/joblog.json",
+        ".logs/output.log"
+      ]
+    }
+  ]

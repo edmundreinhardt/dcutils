@@ -16,6 +16,3 @@ TODO.
 * ibmi-bob
    * Project build `makei build`
    * Compile of files `makei compile -f {files}`
-* ARCAD Builder
-   * Project build `/QOpenSys/pkgs/bin/elias compile {branch}`
-   * Compile of files `/QOpenSys/pkgs/bin/elias compile {branch} -f {files}`

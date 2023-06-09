@@ -1,0 +1,9 @@
+{
+    "repository": "https://github.com/rogersonra/dcutils.git",
+    "description": "DCFile and DCPgm Utilities V.0.1",
+    "includePath": [
+      "qrpgleref"
+    ],
+    "curlib": "&verlibcsy",
+    "objlib": "&verlibcsy"
+  }
