@@ -1,33 +1,127 @@
 [
-    {
-      "name": "Compile with CRTBNDRPG 🔨",
-      "command": "CRTBNDRPG PGM(&CURLIB/&NAME) SRCSTMF('&RELATIVEPATH') OPTION(*EVENTF) DBGVIEW(*SOURCE) TGTRLS(*CURRENT) TGTCCSID(*JOB)",
-      "environment": "ile",
-      "deployFirst": true,
-      "extensions": [
-        "RPGLE"
-      ]
-    },
-    {
-      "name": "Call program",
-      "command": "CALL &CURLIB/&NAME",
-      "environment": "ile",
-      "deployFirst": true,
-      "extensions": [
-        "RPGLE"
-      ]
-    },
-    {
-      "name": "Build and deploy with bob 🔨",
-      "command": "/QOpenSys/pkgs/bin/makei build -e verlibcsy=&CURLIB",
-      "environment": "pase",
-      "deployFirst": true,
-      "extensions": [
-        "GLOBAL"
-      ],
-      "postDownload": [
-        ".logs/joblog.json",
-        ".logs/output.log"
-      ]
-    }
-  ]
+  {
+    "name": "Create RPGLE Program",
+    "command": "CRTBNDRPG PGM(&CURLIB/&NAME) SRCSTMF('&RELATIVEPATH') OPTION(*EVENTF) DBGVIEW(*SOURCE) TGTCCSID(*JOB)",
+    "deployFirst": true,
+    "environment": "ile",
+    "extensions": [
+      "RPGLE"
+    ]
+  },
+  {
+    "name": "Create RPGLE Module",
+    "command": "CRTRPGMOD MODULE(&CURLIB/&NAME) SRCSTMF('&RELATIVEPATH') OPTION(*EVENTF) DBGVIEW(*SOURCE) TGTCCSID(*JOB)",
+    "deployFirst": true,
+    "environment": "ile",
+    "extensions": [
+      "RPGLE"
+    ]
+  },
+  {
+    "name": "Create SQLRPGLE Program",
+    "command": "CRTSQLRPGI OBJ(&CURLIB/&NAME) SRCSTMF('&RELATIVEPATH') OPTION(*EVENTF) DBGVIEW(*SOURCE) CLOSQLCSR(*ENDMOD) CVTCCSID(*JOB) COMPILEOPT('TGTCCSID(*JOB)')",
+    "deployFirst": true,
+    "environment": "ile",
+    "extensions": [
+      "SQLRPGLE"
+    ]
+  },
+  {
+    "name": "Create SQLRPGLE Module",
+    "command": "CRTSQLRPGI OBJ(&CURLIB/&NAME) SRCSTMF('&RELATIVEPATH') OBJTYPE(*MODULE) OPTION(*EVENTF) DBGVIEW(*SOURCE) CLOSQLCSR(*ENDMOD) CVTCCSID(*JOB) COMPILEOPT('TGTCCSID(*JOB)')",
+    "deployFirst": true,
+    "environment": "ile",
+    "extensions": [
+      "SQLRPGLE"
+    ]
+  },
+  {
+    "extensions": [
+      "CLP",
+      "CLLE"
+    ],
+    "name": "Create Bound CL Program",
+    "command": "CRTBNDCL PGM(&CURLIB/&NAME) SRCSTMF('&RELATIVEPATH') OPTION(*EVENTF) DBGVIEW(*SOURCE)",
+    "deployFirst": true,
+    "environment": "ile"
+  },
+  {
+    "extensions": [
+      "SQL"
+    ],
+    "name": "Run SQL Statements (RUNSQLSTM)",
+    "command": "RUNSQLSTM SRCSTMF('&FULLPATH') COMMIT(*NONE) NAMING(*SQL)",
+    "deployFirst": true,
+    "environment": "ile"
+  },
+  {
+    "extensions": [
+      "GLOBAL"
+    ],
+    "name": "Create Service Program (CRTSRVPGM)",
+    "command": "CRTSRVPGM SRVPGM(&CURLIB/&NAME) EXPORT(*ALL) BNDSRVPGM(*NONE) BNDDIR(*NONE) ACTGRP(*CALLER)",
+    "environment": "ile"
+  },
+  {
+    "extensions": [
+      "GLOBAL"
+    ],
+    "name": "Build all",
+    "command": "OPT=*EVENTF BUILDLIB=&CURLIB /QOpenSys/pkgs/bin/makei build",
+    "environment": "pase",
+    "deployFirst": true,
+    "postDownload": [
+      ".logs",
+      ".evfevent"
+    ]
+  },
+  {
+    "extensions": [
+      "GLOBAL"
+    ],
+    "name": "Build current",
+    "command": "OPT=*EVENTF BUILDLIB=&CURLIB /QOpenSys/pkgs/bin/makei compile -f &BASENAME",
+    "environment": "pase",
+    "deployFirst": true,
+    "postDownload": [
+      ".logs",
+      ".evfevent"
+    ]
+  },
+  {
+    "name": "Call program",
+    "command": "CALL &CURLIB/&NAME",
+    "environment": "ile",
+    "deployFirst": true,
+    "extensions": [
+      "RPGLE",
+      "SQLRPGLE"
+    ]
+  },
+  {
+    "name": "Build and deploy with bob 🔨",
+    "command": "/QOpenSys/pkgs/bin/makei build -e verlibcsy=&CURLIB",
+    "environment": "pase",
+    "deployFirst": true,
+    "extensions": [
+      "GLOBAL"
+    ],
+    "postDownload": [
+      ".logs/joblog.json",
+      ".logs/output.log"
+    ]
+  },
+  {
+    "name": "CVTSRCPF - Convert Source File",
+    "command": "OPT=*EVENTF /QOpenSys/pkgs/bin/makei cvtsrcpf qclsrc dcutils",
+    "environment": "pase",
+    "deployFirst": false,
+    "extensions": [
+      "GLOBAL"
+    ],
+    "postDownload": [
+      ".logs/joblog.json",
+      ".logs/output.log"
+    ]
+  }
+]
