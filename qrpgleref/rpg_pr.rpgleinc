@@ -1,0 +1,10 @@
+**free
+Dcl-Pr dc251cl ExtPgm;
+  mlname char(10) const;
+  mlmtxt char(10) const;
+  mlfile char(10) const;
+  mllib  char(10) const;
+  mlseu2 char(10) const;
+End-Pr;
+ 
+ 
