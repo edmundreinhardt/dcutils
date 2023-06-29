@@ -5,13 +5,7 @@ CTL-Opt debug(*Yes);
 CTL-Opt option(*SrcStmt : *NoDebugIO : *NoShowCpy);
 
 /include 'qrpgleref/rpg_pr.rpgleinc'
-// Dcl-Pr dc251cl ExtPgm;
-//   mlname like(dspmodDs.mlname) const;
-//   mlmtxt like(dspmodDs.mlmtxt) const;
-//   mlfile like(dspmodDs.mlfile) const;
-//   mllib  like(dspmodDs.mllib) const;
-//   mlseu2 like(dspmodDs.mlseu2) const;
-// End-Pr;
+
 
 // ********************************************
 //                                           *
@@ -33,7 +27,7 @@ End-Ds;
 Setll *start dspmod;
 Dou (%Eof(dspmod));
   Read dspmod dspmodDs;
-  If (%Eof(dspmod));
+  If (%Eof(dspmod)); 
     Iter;
   Endif;
 

@@ -1,9 +1,13 @@
 {
     "repository": "https://github.com/rogersonra/dcutils.git",
+    "version": "0.0.1",
     "description": "DCFile and DCPgm Utilities V.0.0.1",
     "includePath": [
       "QRPGLEREF"
     ],
-    "curlib": "&verlibcsy",
-    "objlib": "&verlibcsy"
+    "objlib": "&lib1",
+    "curlib": "&lib1",
+    "preUsrlibl": ["&lib1"],
+    "postUsrlibl": [],
+    "setIBMiEnvCmd": []
   }

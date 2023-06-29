@@ -1,5 +1,7 @@
 DC700CL:   Pgm   /*  Weekly refresh of documentation x-ref files  */
 
+DclPrcOpt DftActGrp(*NO) ActGrp('DCAG')
+
 /*  Clear the field xref file  */
 
 ClrPfm DCFXRFP

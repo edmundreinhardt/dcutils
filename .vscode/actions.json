@@ -63,65 +63,29 @@
     "environment": "ile"
   },
   {
-    "extensions": [
-      "GLOBAL"
-    ],
-    "name": "Build all",
-    "command": "OPT=*EVENTF BUILDLIB=&CURLIB /QOpenSys/pkgs/bin/makei build",
-    "environment": "pase",
+    "command": "err=*EVENTF lib1=&CURLIB /QOpenSys/pkgs/bin/makei build",
     "deployFirst": true,
+    "environment": "pase",
+    "extensions": [
+        "GLOBAL"
+    ],
+    "name": "bob build",
     "postDownload": [
-      ".logs",
-      ".evfevent"
-    ]
+        ".logs/",
+        ".evfevent/"
+        ]
   },
   {
-    "extensions": [
-      "GLOBAL"
-    ],
-    "name": "Build current",
-    "command": "OPT=*EVENTF BUILDLIB=&CURLIB /QOpenSys/pkgs/bin/makei compile -f &BASENAME",
-    "environment": "pase",
+    "command": "err=*EVENTF /QOpenSys/pkgs/bin/makei compile -f &BASENAME -e lib1=&CURLIB",
     "deployFirst": true,
-    "postDownload": [
-      ".logs",
-      ".evfevent"
-    ]
-  },
-  {
-    "name": "Call program",
-    "command": "CALL &CURLIB/&NAME",
-    "environment": "ile",
-    "deployFirst": true,
-    "extensions": [
-      "RPGLE",
-      "SQLRPGLE"
-    ]
-  },
-  {
-    "name": "Build and deploy with bob 🔨",
-    "command": "/QOpenSys/pkgs/bin/makei build -e verlibcsy=&CURLIB",
     "environment": "pase",
-    "deployFirst": true,
     "extensions": [
-      "GLOBAL"
+        "GLOBAL"
     ],
+    "name": "bob compile",
     "postDownload": [
-      ".logs/joblog.json",
-      ".logs/output.log"
-    ]
-  },
-  {
-    "name": "CVTSRCPF - Convert Source File",
-    "command": "OPT=*EVENTF /QOpenSys/pkgs/bin/makei cvtsrcpf qclsrc dcutils",
-    "environment": "pase",
-    "deployFirst": false,
-    "extensions": [
-      "GLOBAL"
-    ],
-    "postDownload": [
-      ".logs/joblog.json",
-      ".logs/output.log"
-    ]
+        ".logs/",
+        ".evfevent/"
+        ]
   }
 ]
