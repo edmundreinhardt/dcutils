@@ -1,0 +1,26 @@
+CREATE TABLE DCFXRFP (
+      FXFLD CHAR(10) CCSID 37 NOT NULL DEFAULT '' ,
+      FXFILE CHAR(10) CCSID 37 NOT NULL DEFAULT '' ,
+      FXFPOS DECIMAL(5, 0) NOT NULL DEFAULT 0 ,
+      FXTPOS DECIMAL(5, 0) NOT NULL DEFAULT 0 ,
+      FXOBNM CHAR(10) CCSID 37 NOT NULL DEFAULT '' ,
+      FXOBTP CHAR(10) CCSID 37 NOT NULL DEFAULT '' ,
+      FXTYPE CHAR(2) CCSID 37 NOT NULL DEFAULT '' ,
+      FXUSED CHAR(1) CCSID 37 NOT NULL DEFAULT '' ,
+      FXUSER CHAR(10) CCSID 37 NOT NULL DEFAULT '' )  
+        
+      RCDFMT DCFXRF     ;
+ 
+LABEL ON TABLE DCFXRFP
+      IS 'Field cross reference file' ;
+ 
+LABEL ON COLUMN DCFXRFP
+(   FXFLD TEXT IS 'Field name' ,
+    FXFILE TEXT IS 'File name' ,
+    FXFPOS TEXT IS 'Starting position in record' ,
+    FXTPOS TEXT IS 'Ending position in record' ,
+    FXOBNM TEXT IS 'Object name where used' ,
+    FXOBTP TEXT IS 'Object type' ,
+    FXTYPE TEXT IS 'File usage code (I/U/O etc)' ,
+    FXUSED TEXT IS 'Field used flag Y/N' ,
+    FXUSER TEXT IS 'User id' ) ;

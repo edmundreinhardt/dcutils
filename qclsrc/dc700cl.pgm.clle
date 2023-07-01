@@ -7,11 +7,12 @@ DclPrcOpt DftActGrp(*NO) ActGrp('DCAG')
 ClrPfm DCFXRFP
 MonMsg cpf0000
 
-ClrPfm DCFXRFP
-MonMsg cpf0000
-
 /*  Rebuild IBM outfiles  */
 Call dc090cl Parm('Y' 'Y' 'Y' 'Y' 'Y')
+
+-- dc090cl finished
+-- dc090cl finished
+-- dc090cl finished
 
 /*  Update procedure/module xref file  */
 ClrPfm dcprocp

@@ -1,0 +1,61 @@
+CREATE TABLE DSPPGMRF ( 
+	WHLIB CHAR(10) CCSID 37 NOT NULL DEFAULT '' , 
+	WHPNAM CHAR(10) CCSID 37 NOT NULL DEFAULT '' , 
+	WHTEXT CHAR(50) CCSID 37 NOT NULL DEFAULT '' , 
+	WHFNUM NUMERIC(5, 0) NOT NULL DEFAULT 0 , 
+	WHDTTM CHAR(13) CCSID 37 NOT NULL DEFAULT '' , 
+	WHFNAM CHAR(11) CCSID 37 NOT NULL DEFAULT '' , 
+	WHLNAM CHAR(11) CCSID 37 NOT NULL DEFAULT '' , 
+	WHSNAM CHAR(11) CCSID 37 NOT NULL DEFAULT '' , 
+	WHRFNO NUMERIC(3, 0) NOT NULL DEFAULT 0 , 
+	WHFUSG NUMERIC(2, 0) NOT NULL DEFAULT 0 , 
+	WHRFNM CHAR(10) CCSID 37 NOT NULL DEFAULT '' , 
+	WHRFSN CHAR(13) CCSID 37 NOT NULL DEFAULT '' , 
+	WHRFFN NUMERIC(5, 0) NOT NULL DEFAULT 0 , 
+	WHOBJT CHAR(1) CCSID 37 NOT NULL DEFAULT '' , 
+	WHOTYP CHAR(10) CCSID 37 NOT NULL DEFAULT '' , 
+	WHSYSN CHAR(8) CCSID 37 NOT NULL DEFAULT '' , 
+	WHSPKG CHAR(1) CCSID 37 NOT NULL DEFAULT '' )   
+	  
+	RCDFMT QWHDRPPR   ; 
+  
+LABEL ON TABLE DSPPGMRF 
+	IS 'Output file for DSPPGMREF' ; 
+  
+LABEL ON COLUMN DSPPGMRF 
+(   WHLIB IS 'Library' , 
+	WHPNAM IS 'Program' , 
+	WHTEXT IS 'TEXT                Text                ''Description''' , 
+	WHFNUM IS 'Number Of           Objects Referenced' , 
+	WHDTTM IS 'Retrieval           Date And Time' , 
+	WHFNAM IS 'Object              Referenced' , 
+	WHLNAM IS 'Library' , 
+	WHSNAM IS 'Source              File Name' , 
+	WHRFNO IS 'Number Of           Record Formats' , 
+	WHFUSG IS 'File Usage' , 
+	WHRFNM IS 'Record              Format' , 
+	WHRFSN IS 'Format Level        Identifier' , 
+	WHRFFN IS 'Number Of           Fields' , 
+	WHOBJT IS 'Object              Type' , 
+	WHOTYP IS 'Object              Type' , 
+	WHSYSN IS 'System              Name' , 
+	WHSPKG IS 'Referencing         Object              Type' ) ; 
+  
+LABEL ON COLUMN DSPPGMRF 
+(   WHLIB TEXT IS 'Library' , 
+	WHPNAM TEXT IS 'Program' , 
+	WHTEXT TEXT IS 'Text ''description''' , 
+	WHFNUM TEXT IS 'Number of objects referenced' , 
+	WHDTTM TEXT IS 'Retrieval date:  century/date/time' , 
+	WHFNAM TEXT IS 'Object referenced: 1=*EXPR' , 
+	WHLNAM TEXT IS 'Library referenced: 1=*EXPR' , 
+	WHSNAM TEXT IS 'File name in source program: 1=*EXPR' , 
+	WHRFNO TEXT IS 'Number of record formats referenced' , 
+	WHFUSG TEXT IS '1=I,2=O,3=I/O,4=U,5=I/U,6=O/U,7=I/O/U,8=N/S,0=N/A' , 
+	WHRFNM TEXT IS 'Record format referenced' , 
+	WHRFSN TEXT IS 'Format level identifier' , 
+	WHRFFN TEXT IS 'Number of fields' , 
+	WHOBJT TEXT IS 'Object type: F=File, P=Program, D=Data area' , 
+	WHOTYP TEXT IS 'Object type' , 
+	WHSYSN TEXT IS 'System Name (Source System, if file is DDM)' , 
+	WHSPKG TEXT IS 'PGM=P, SQLPKG=S, SRVPGM=V, MODULE=M' ) ; 

@@ -1,0 +1,58 @@
+CREATE TABLE DSPDBR ( 
+	WHRTYP CHAR(1) CCSID 37 NOT NULL DEFAULT '' , 
+	WHRFI CHAR(10) CCSID 37 NOT NULL DEFAULT '' , 
+	WHRLI CHAR(10) CCSID 37 NOT NULL DEFAULT '' , 
+	WHRMB CHAR(10) CCSID 37 NOT NULL DEFAULT '' , 
+	WHRRD CHAR(10) CCSID 37 NOT NULL DEFAULT '' , 
+	WHNO NUMERIC(5, 0) NOT NULL DEFAULT 0 , 
+	WHDTM CHAR(13) CCSID 37 NOT NULL DEFAULT '' , 
+	WHREFI CHAR(10) CCSID 37 NOT NULL DEFAULT '' , 
+	WHRELI CHAR(10) CCSID 37 NOT NULL DEFAULT '' , 
+	WHREMB CHAR(10) CCSID 37 NOT NULL DEFAULT '' , 
+	WHTYPE CHAR(1) CCSID 37 NOT NULL DEFAULT '' , 
+	WHJDIL NUMERIC(2, 0) NOT NULL DEFAULT 0 , 
+	WHJREF NUMERIC(2, 0) NOT NULL DEFAULT 0 , 
+	WHSYSN CHAR(8) CCSID 37 NOT NULL DEFAULT '' , 
+	WHCTLN CHAR(10) CCSID 37 NOT NULL DEFAULT '' , 
+	WHCSTN VARCHAR(258) ALLOCATE(18) CCSID 37 NOT NULL DEFAULT '' )   
+	  
+	RCDFMT QWHDRDBR   ; 
+  
+LABEL ON TABLE DSPDBR 
+	IS 'Output file for DSPDBR' ; 
+  
+LABEL ON COLUMN DSPDBR 
+(   WHRTYP IS 'Type                Of                  File' , 
+	WHRFI IS 'File' , 
+	WHRLI IS 'Library' , 
+	WHRMB IS 'Member' , 
+	WHRRD IS 'Record              Format' , 
+	WHNO IS 'Number Of           Dependencies' , 
+	WHDTM IS 'Retrieval           Date And Time' , 
+	WHREFI IS 'Dependent           File' , 
+	WHRELI IS 'Dependent           Library' , 
+	WHREMB IS 'Dependent           Member' , 
+	WHTYPE IS 'Type Of             Dependency' , 
+	WHJDIL IS 'JFILE               Number' , 
+	WHJREF IS 'JREF' , 
+	WHSYSN IS 'System              Name' , 
+	WHCTLN IS 'Constraint          Library' , 
+	WHCSTN IS 'Constraint          Name' ) ; 
+  
+LABEL ON COLUMN DSPDBR 
+(   WHRTYP TEXT IS 'Type of file: P=Physical, L=Logical' , 
+	WHRFI TEXT IS 'File' , 
+	WHRLI TEXT IS 'Library' , 
+	WHRMB TEXT IS 'Member' , 
+	WHRRD TEXT IS 'Record format' , 
+	WHNO TEXT IS 'Number of dependencies' , 
+	WHDTM TEXT IS 'Retrieval date: century/date/time' , 
+	WHREFI TEXT IS 'Dependent file' , 
+	WHRELI TEXT IS 'Dependent library' , 
+	WHREMB TEXT IS 'Dependent member' , 
+	WHTYPE TEXT IS 'D=Data,I=Access path,O=Acc path owner,V=SQL VIEW,C' , 
+	WHJDIL TEXT IS 'Ordinal number of position in the JFILE list' , 
+	WHJREF TEXT IS 'Join reference number' , 
+	WHSYSN TEXT IS 'System Name (Source System, if file is DDM)' , 
+	WHCTLN TEXT IS 'Constraint Library' , 
+	WHCSTN TEXT IS 'Constraint Name' ) ; 

@@ -1,0 +1,22 @@
+CREATE TABLE DCPROCP (
+      PRPROC CHAR(15) CCSID 37 NOT NULL DEFAULT '' ,
+      PRMODL CHAR(10) CCSID 37 NOT NULL DEFAULT '' ,
+      PRPRDS CHAR(50) CCSID 37 NOT NULL DEFAULT '' ,
+      PRMDDS CHAR(50) CCSID 37 NOT NULL DEFAULT '' )  
+        
+      RCDFMT DCPROC     ;
+ 
+LABEL ON TABLE DCPROCP
+      IS 'Procedure file' ;
+ 
+LABEL ON COLUMN DCPROCP
+(   PRPROC IS 'Procedure' ,
+    PRMODL IS 'Module' ,
+    PRPRDS IS 'Proc description' ,
+    PRMDDS IS 'Mod description' ) ;
+ 
+LABEL ON COLUMN DCPROCP
+(   PRPROC TEXT IS 'Procedure' ,
+    PRMODL TEXT IS 'Module' ,
+    PRPRDS TEXT IS 'Procedure description' ,
+    PRMDDS TEXT IS 'Module description' ) ;

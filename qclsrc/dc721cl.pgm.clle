@@ -1,0 +1,14 @@
+/*  Update Program Usage Files  */  
+                                               
+DC721CL:   PGM                                  
+                                               
+/*  Update DSPOBJ work file clone  */          
+                                               
+call dc721                                      
+                                               
+/*  Replace the pgm usage summary file  */      
+                                               
+clrpfm dcusagp                                  
+call dc722                                      
+                                               
+endpgm  

@@ -1,0 +1,115 @@
+/*************************************************/
+/*  Rebuild one or more IBM outfiles             */
+/*     for cross reference system                */
+/*************************************************/
+
+DC090CL:   PGM   PARM(&OF1 &OF2 &OF3 &OF4 &OF5)
+
+DCL  &OF1  TYPE(*CHAR)  LEN(1)  /* Run DSPFD *MBRLIST for pgms? */
+DCL  &OF2  TYPE(*CHAR)  LEN(1)  /* Run DSPPGMREF?               */
+DCL  &OF3  TYPE(*CHAR)  LEN(1)  /* Run DSPDBR?                  */
+DCL  &OF4  TYPE(*CHAR)  LEN(1)  /* Run DSPOBJD?                 */
+DCL  &OF5  TYPE(*CHAR)  LEN(1)  /* Run DSPFD for PF's?          */
+dcl  &sysname   *char      10   /* System name                  */
+
+DCLF  DCDATAP
+
+DclPrcOpt DftActGrp(*NO) ActGrp('DCAG')
+
+rtvneta sysname(&sysname)
+
+/*  Changed joblog msg level to prevent huge joblogs  */
+
+             CHGJOB     LOG(1 20)
+
+/*  Clear outfiles for which a rebuild was requested  */
+
+IF (&OF1 = 'Y') THEN(CLRPFM DSPMBR)
+IF (&OF2 = 'Y') THEN(CLRPFM DSPPGMRF)
+IF (&OF3 = 'Y') THEN(CLRPFM DSPDBR)
+IF (&OF4 = 'Y') THEN(CLRPFM DSPOBJ)
+IF (&OF5 = 'Y') THEN(CLRPFM DSPPF)
+IF (&OF5 = 'Y') THEN(CLRPFM RCDFMT)
+IF (&OF5 = 'Y') THEN(CLRPFM ACCPTH)
+
+/*  Read a data analysis request record  */
+LOOP:
+
+RCVF  RCDFMT(DCDATA)
+   MONMSG     MSGID(CPF0864) EXEC(GOTO CMDLBL(XLOOP))
+
+/*  Execute commands for outfiles if the rebuild was requested  */
+/*    and if the data analysis record indicates this file or    */
+/*    library should contribute to the rebuild.                 */
+
+/*  List S36 procedures in source file  */
+
+IF (&OF1 = 'Y' *AND &DAOF1 = 'Y') THEN(DO)
+             DSPFD      FILE(&DALIB/&DASRF) TYPE(*MBRLIST) +
+                          OUTPUT(*OUTFILE) OUTFILE(DSPMBR) +
+                          OUTMBR(*FIRST *ADD)
+ENDDO
+
+/*  List objects used by programs (files, data areas, etc)  */
+
+IF (&OF2 = 'Y' *AND &DAOF2 = 'Y') THEN(DO)
+             DSPPGMREF  PGM(&DALIB/*ALL) OUTPUT(*OUTFILE) +
+                          OBJTYPE(*all) OUTFILE(DSPPGMRF) +
+                          OUTMBR(*FIRST *ADD)
+ENDDO
+
+/*  List physical-logical file relationships  */
+
+IF (&OF3 = 'Y' *AND &DAOF3 = 'Y') THEN(DO)
+             DSPDBR     FILE(&DALIB/*ALL) OUTPUT(*OUTFILE) +
+                          OUTFILE(DSPDBR) OUTMBR(*FIRST *ADD)
+ENDDO
+
+/*  List source information for programs  */
+
+IF (&OF4 = 'Y' *AND &DAOF4 = 'Y') THEN(DO)
+             DSPOBJD    OBJ(&DALIB/*ALL) OBJTYPE(*PGM *SRVPGM +
+                          *MODULE) DETAIL(*FULL) OUTPUT(*OUTFILE) +
+                          OUTFILE(DSPOBJ) OUTMBR(*FIRST *ADD)
+ENDDO
+
+/*  For data files, list:  */
+/*  1. PF info             */
+/*  2. Record format names */
+/*  3. Key info            */
+
+IF (&OF5 = 'Y' *AND &DAOF5 = 'Y') THEN(DO)
+             DSPFD      FILE(&DALIB/*ALL) TYPE(*ATR) +
+                          OUTPUT(*OUTFILE) FILEATR(*PF) +
+                          OUTFILE(DSPPF) OUTMBR(*FIRST *ADD)
+             DSPFD      FILE(&DALIB/*ALL) TYPE(*RCDFMT) +
+                          OUTPUT(*OUTFILE) OUTFILE(RCDFMT) +
+                          OUTMBR(*FIRST *ADD)
+             DSPFD      FILE(&DALIB/*ALL) TYPE(*ACCPTH) +
+                          OUTPUT(*OUTFILE) OUTFILE(ACCPTH) +
+                          OUTMBR(*FIRST *ADD)
+ENDDO
+
+GOTO LOOP
+
+XLOOP:
+
+/*  Display module list to outfile  */
+
+/* dspfd comlib_sfo/procedures type(*mbrlist) output(*outfile) +              */
+/*    outfile(dspmod) outmbr(*first *replace)                                 */
+/*                                                                            */
+/* if (&sysname = 'SFOFFICE' *or &sysname = 'COMANCHE') then(do)              */
+/*    dspfd canlib/procedures type(*mbrlist) output(*outfile) +               */
+/*       outfile(dspmod) outmbr(*first *add    )                              */
+/* enddo                                                                      */
+/*                                                                            */
+/*  Get a complete list of production objects in ALLOBJ  *//*                 */
+/*                                                                            */
+/* call dc095cl                                                               */
+/*                                                                            */
+/*  Get a complete list of production source mbrs in ALLMBR  *//*             */
+/*                                                                            */
+/* call dc096cl                                                               */
+
+endpgm
