@@ -1,0 +1,19 @@
+/* CMPF - Command */
+/* CPP PG5000C, PG5000R */
+             CMD        PROMPT('Compare file with SQL')
+             PARM       KWD(FILE) TYPE(*CHAR) LEN(10) MIN(1) +
+                          PGM(*YES) PROMPT('File...')
+             PARM       KWD(OLDLIB) TYPE(*CHAR) LEN(10) MIN(1) +
+                          PGM(*YES) PROMPT('Old Library...')
+             PARM       KWD(NEWLIB) TYPE(*CHAR) LEN(10) MIN(1) +
+                          PGM(*YES) PROMPT('New Library...')
+             PARM       KWD(JOIN1 ) TYPE(*CHAR) LEN(10) MIN(0) +
+                          PGM(*YES) PROMPT('Join field 1...')
+             PARM       KWD(JOIN2 ) TYPE(*CHAR) LEN(10) MIN(0) +
+                          PGM(*YES) PROMPT('Join field 2...')
+             PARM       KWD(JOIN3 ) TYPE(*CHAR) LEN(10) MIN(0) +
+                          PGM(*YES) PROMPT('Join field 3...')
+             PARM       KWD(JOIN4 ) TYPE(*CHAR) LEN(10) MIN(0) +
+                          PGM(*YES) PROMPT('Join field 4...')
+             PARM       KWD(JOIN5 ) TYPE(*CHAR) LEN(10) MIN(0) +
+                          PGM(*YES) PROMPT('Join field 5...')
