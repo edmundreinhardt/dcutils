@@ -1,0 +1,66 @@
+          /*  Create Called-to-Calling Cross Reference Files */
+          /*   using DSPPGMREF output + S/36 proc analysis   */
+
+DC111CL:   PGM
+
+DCL  &SRLNBR  TYPE(*CHAR)  LEN(8)  /* MACHINE SERIAL # - RETRIEVED */
+                                   /* TO ALLOW CUSTOMIZATION FOR   */
+                                   /* SFOFFICE VS CHEROKEE         */
+DCL  &SYSTEM  TYPE(*CHAR)  LEN(10) /* System name                  */
+
+DclPrcOpt DftActGrp(*NO) ActGrp('DCAG')
+
+/*  Get serial # and system name  */
+
+RTVSYSVAL QSRLNBR RTNVAR(&SRLNBR)
+RTVNETA SYSNAME(&SYSTEM)
+
+/*  Changed joblog msg level to prevent huge joblogs  */
+
+             CHGJOB     LOG(1 20)
+
+/*  Read the DSPPGMRF records and populate DCPGPGP  */
+
+CLRPFM  DCPGPGP
+OVRDBF  DCPGPGP FRCRATIO(1)
+CALL DC110  /*  TODO: Working on this */
+DLTOVR  DCPGPGP
+
+/*  Read and analyze the source members from DSPMBR  */
+/*  for STRS36PRC commands and to analyze the procs. */
+
+
+/*  Analyze RPG calls via QCMDEXC:  compile-time tables  */
+/*  and files containing commands                        */
+/*  Pass in serial# for system customization             */
+
+OVRDBF DCPGPGP SHARE(*YES)
+OPNQRYF DCPGPGP +
+   QRYSLT('DPCLED = "QCMDEXC   "') +
+   KEYFLD(DPCLNG) +
+   UNIQUEKEY(1)
+             CPYFRMQRYF FROMOPNID(DCPGPGP) TOFILE(DC112WP) +
+                          MBROPT(*REPLACE)
+CLOF DCPGPGP
+DLTOVR DCPGPGP
+
+CALL DC112  PARM(&SRLNBR)
+
+/*  For Cherokee, add PKSBMJOB calls to the xref file    */
+
+IF (&SYSTEM = 'CHEROKEE') THEN(CALL DC056)
+
+/*  Look for bound calls in rpgle pgms  */
+
+call dc130
+
+/*  Add night run calls from EODLIST  */
+
+call dc119
+
+/*  Resequence duplicate seq#'s in DCPGPGP so that DC101 */
+/*  can display all of the called pgms.                  */
+
+CALL DC113
+
+END:        ENDPGM

@@ -1,0 +1,24 @@
+         /*  Look for Procedures in RPGLE Source Mbr  */
+
+DC251CL:   PGM   PARM(&MLNAME &MLMTXT &MLFILE &MLLIB &MLSEU2)
+
+DCL  &MLNAME  *CHAR  LEN(10)  /*  SRC MBR NAME  */
+DCL  &MLMTXT  *CHAR  LEN(50)  /*  DESCRIPTION   */
+DCL  &MLFILE  *CHAR  LEN(10)  /*  SRC FILE      */
+DCL  &MLLIB   *CHAR  LEN(10)  /*  SRC LIBRARY   */
+DCL  &MLSEU2  *CHAR  LEN(10)  /*  SRC TYPE      */
+
+/*  Make sure source member can be found  */
+
+CHKOBJ     OBJ(&MLLIB/&MLFILE) OBJTYPE(*FILE) MBR(&MLNAME)
+MONMSG     MSGID(CPF0000) EXEC(GOTO CMDLBL(ENDPGM))
+
+/*  Override qrpglesrc to correct file/lib/mbr and look for */
+/*     Call statements                                      */
+
+OVRDBF DCPROCP FRCRATIO(1)
+OVRDBF QRPGLESRC TOFILE(&MLLIB/&MLFILE) MBR(&MLNAME)
+CALL  DC251  PARM(&MLNAME &MLMTXT &MLFILE &MLLIB &MLSEU2)
+DLTOVR DCPROCP
+
+ENDPGM:   ENDPGM
