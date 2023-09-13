@@ -63,7 +63,7 @@
     "environment": "ile"
   },
   {
-    "command": "err=*EVENTF lib1=&CURLIB /QOpenSys/pkgs/bin/makei build",
+    "command": "err=*EVENTF lib1=&CURLIB makei build",
     "deployFirst": true,
     "environment": "pase",
     "extensions": [
@@ -76,7 +76,7 @@
         ]
   },
   {
-    "command": "err=*EVENTF /QOpenSys/pkgs/bin/makei compile -f &BASENAME -e lib1=&CURLIB",
+    "command": "err=*EVENTF makei compile -f &BASENAME -e lib1=&CURLIB",
     "deployFirst": true,
     "environment": "pase",
     "extensions": [

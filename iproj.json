@@ -1,10 +1,8 @@
 {
-    "repository": "https://github.com/rogersonra/dcutils.git",
+    "repository": "https://github.com/rogersonra/cmpf.git",
     "version": "0.0.1",
-    "description": "DCFile and DCPgm Utilities V.0.0.1",
-    "includePath": [
-      "QRPGLEREF"
-    ],
+    "description": "Compare two files row by row for regression testing",
+    "includePath": [],
     "objlib": "&lib1",
     "curlib": "&lib1",
     "preUsrlibl": ["&lib1"],

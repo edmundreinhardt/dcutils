@@ -1,6 +1,6 @@
-## DC Utilities V.0.1
+## CMPF V.0.1
 
-DCFile and DCPgm Utilities V.0.1
+Compare two files row by row for regression testing V.0.1
 
 * Built with 
 * VS Code 

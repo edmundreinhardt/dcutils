@@ -1,14 +1,9 @@
 /* PG5000C - CPP for CMPF */
-Pgm (&file &oldlib &newlib &join1 &join2 &join3 &join4 &join5)
+Pgm (&file &oldlib &newlib)
 
 dcl &file    *char 10
 dcl &oldlib  *char 10
 dcl &newlib  *char 10
-dcl &join1   *char 10
-dcl &join2   *char 10
-dcl &join3   *char 10
-dcl &join4   *char 10
-dcl &join5   *char 10
 dcl &qt      *char  1 value('''')
 
 DclPrcOpt dftactgrp(*no) actgrp(*new)
@@ -30,7 +25,7 @@ Chkobj Obj(&newlib/&file) Objtype(*file)
 monmsg (CPF9801 CPF3012) Exec(Goto endpgm)
 
 /* Now call the RPG to create the sql */
-Call PG5000R  (&file &oldlib &newlib &join1 &join2 &join3 &join4 &join5)
+Call PG5000R  (&file &oldlib &newlib)
 
 /*SNDPGMMSG  MSG('Run this to get sql: SELECT SQL_STMT FROM pglib/cmpfsqlp ' +
                || 'WHERE file = ' || &file)  */

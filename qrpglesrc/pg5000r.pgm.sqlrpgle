@@ -1,36 +1,37 @@
+**FREE
 PG5000R
-      ****************************************************************
-     Hoption(*nodebugio:*srcstmt) bnddir('COMBND')
-     Hdftactgrp(*no) actgrp(*new)
+        //***************************************************************
+       Ctl-Opt option(*nodebugio:*srcstmt)
+       Ctl-Opt dftactgrp(*no) actgrp(*caller);
 
-     Fdspffd    if   e             disk    extfile('QTEMP/DSPFFD')
-     Fcmpfsqlp  o    e             disk    rename(cmpfsqlr:cmpfile)
-     F
-     d cmpfsqlr        pr                  extpgm('CMPFSQLR')
-     d                               10a   const
-     d                               10a   const
-     d                               10a   const
-     d                               10a   const
-     d                               10a   const
-     d                               10a   const
-     d                               10a   const
-     d                               10a   const
-     d
-     d cmpfsqlr        pi
-     d  file                         10a   const
-     d  oldlib                       10a   const
-     d  newlib                       10a   const
-     d  join1                        10a   const
-     d  join2                        10a   const
-     d  join3                        10a   const
-     d  join4                        10a   const
-     d  join5                        10a   const
+       Dcl-F dspffd Usage(*Input) extfile('QTEMP/DSPFFD');
+       Dcl-F cmpfsqlp Usage(*Output) rename(cmpfsqlr:cmpfile);
+       
+       Dcl-PR cmpfsqlr  extpgm('CMPFSQLR');
+         *N             Char(10)   const;
+         *N             Char(10)   const;
+         *N             Char(10)   const;
+         *N             Char(10)   const;
+         *N             Char(10)   const;
+         *N             Char(10)   const;
+         *N             Char(10)   const;
+         *N             Char(10)   const ;
+        End-PR;
+       Dcl-PI cmpfsqlr;
+         file           Char(10)   const;
+         oldlib         Char(10)   const;
+         newlib         Char(10)   const;
+         join1          Char(10)   const;
+         join2          Char(10)   const;
+         join3          Char(10)   const;
+         join4          Char(10)   const;
+         join5          Char(10)   const;
+        End-PI;
 
-      /free
         // Set the SQL environment
         Exec SQL
           SET OPTION COMMIT=*none, DYNUSRPRF=*owner, NAMING=*sys,
-             DLYPRP=*yes, CLOSQLCSR=*endmod;
+             DLYPRP=*yes, CLOSQLCSR=*endjob;
         Exec sql
           DELETE FROM cmpfsqlp WHERE file = :file;
 
@@ -135,5 +136,4 @@ PG5000R
         seq += 1;
         sql_stmt = ' );';
         Write cmpfile;
-        Return;
-      /end-free
+        Return;e

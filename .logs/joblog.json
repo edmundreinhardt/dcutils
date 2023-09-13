@@ -1,0 +1,78 @@
+[
+    {
+        "cmd": "CRTSQLRPGI srcstmf('/home/rrogerson/dcutils/QRPGLESRC/PG5000R.PGM.SQLRPGLE') OBJ(/PG5000R) COMMIT(*NONE ) OBJTYPE(*PGM) OPTION(*EVENTF) OUTPUT(*PRINT) TEXT(' ') TGTRLS() DBGVIEW(*SOURCE) RPGPPOPT(*LVL2) COMPILEOPT('TGTCCSID( ) OPTIMIZE() INCDIR(*NONE)')",
+        "cmd_time": "2023-09-12-23.51.17.589223000",
+        "msgs": [
+            {
+                "msgid": "CPC2198",
+                "type": "COMPLETION",
+                "severity": 0,
+                "message_time": "2023-09-12-23.51.12.748877",
+                "message_text": "Current library changed to DCUTILS.",
+                "second_level": "&N Cause . . . . . :   The current library in the library list was changed to DCUTILS.",
+                "from_program": "QLICHLLE",
+                "from_library": "QSYS",
+                "from_instruction": "01A3",
+                "to_program": "QP2USER2",
+                "to_library": "QSYS",
+                "to_module": "QP2API",
+                "to_procedure": "runpase_common__FiPvT2",
+                "to_instruction": "4"
+            },
+            {
+                "msgid": "CPC2196",
+                "type": "COMPLETION",
+                "severity": 0,
+                "message_time": "2023-09-12-23.51.12.758993",
+                "message_text": "Library DCUTILS added to library list.",
+                "second_level": "&N Cause . . . . . :   If the ADDLIBLE command was used, DCUTILS was added to the user library list.  If the CHGSYSLIBL command was used, DCUTILS was added to the system portion of the library list.",
+                "from_program": "QLICUSRL",
+                "from_library": "QSYS",
+                "from_instruction": "0114",
+                "to_program": "QP2USER2",
+                "to_library": "QSYS",
+                "to_module": "QP2API",
+                "to_procedure": "runpase_common__FiPvT2",
+                "to_instruction": "4"
+            }
+        ]
+    },
+    {
+        "cmd": "CRTCMD CMD(/CMPF) srcstmf('/home/rrogerson/dcutils/QCMDSRC/CMPF.CMDSRC') PGM(PG5000C) VLDCKR(*NONE) PMTFILE(*NONE) HLPPNLGRP(CMPF) HLPID(CMPF) AUT() ALLOW() TEXT('Compare file with SQL')",
+        "cmd_time": "2023-09-12-23.51.46.838905000",
+        "msgs": [
+            {
+                "msgid": "CPC2198",
+                "type": "COMPLETION",
+                "severity": 0,
+                "message_time": "2023-09-12-23.51.42.139205",
+                "message_text": "Current library changed to DCUTILS.",
+                "second_level": "&N Cause . . . . . :   The current library in the library list was changed to DCUTILS.",
+                "from_program": "QLICHLLE",
+                "from_library": "QSYS",
+                "from_instruction": "01A3",
+                "to_program": "QP2USER2",
+                "to_library": "QSYS",
+                "to_module": "QP2API",
+                "to_procedure": "runpase_common__FiPvT2",
+                "to_instruction": "4"
+            },
+            {
+                "msgid": "CPC2196",
+                "type": "COMPLETION",
+                "severity": 0,
+                "message_time": "2023-09-12-23.51.42.158829",
+                "message_text": "Library DCUTILS added to library list.",
+                "second_level": "&N Cause . . . . . :   If the ADDLIBLE command was used, DCUTILS was added to the user library list.  If the CHGSYSLIBL command was used, DCUTILS was added to the system portion of the library list.",
+                "from_program": "QLICUSRL",
+                "from_library": "QSYS",
+                "from_instruction": "0114",
+                "to_program": "QP2USER2",
+                "to_library": "QSYS",
+                "to_module": "QP2API",
+                "to_procedure": "runpase_common__FiPvT2",
+                "to_instruction": "4"
+            }
+        ]
+    }
+]
