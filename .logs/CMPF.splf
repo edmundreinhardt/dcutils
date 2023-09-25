@@ -1,0 +1,11 @@
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+CPC2198: Current library changed to DCUTILS.
+
+>> executing command: CRTCMD CMD(/CMPF) srcstmf('/home/rrogerson/dcutils/QCMDSRC/CMPF.CMDSRC') PGM(PG5000C) VLDCKR(*NONE) PMTFILE(*NONE) HLPPNLGRP(CMPF) HLPID(CMPF) AUT() ALLOW() TEXT('Compare file with SQL')
+>> liblist: QSYS QSYS2 QHLPSYS QUSRSYS QSHELL DCUTILS QTEMP DTCSRC DTCOBJ DTCDTA QGPL RROGERSON
+>> executing time: 2023-09-25-15.28.28
+
+CPD0104: Expression not allowed for parameter CMD.
+CPF0006: Errors occurred in command.
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+

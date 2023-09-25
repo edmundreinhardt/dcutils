@@ -1,11 +1,12 @@
 {
-    "repository": "https://github.com/rogersonra/cmpf.git",
-    "version": "0.0.1",
-    "description": "Compare two files row by row for regression testing",
-    "includePath": [],
-    "objlib": "&lib1",
-    "curlib": "&lib1",
-    "preUsrlibl": ["&lib1"],
-    "postUsrlibl": [],
-    "setIBMiEnvCmd": []
-  }
+  "version": "0.0.1",
+  "description": "Compare two files row by row for regression testing",
+  "objlib": "&lib1",
+  "curlib": "&lib1",
+  "includePath": [],
+  "preUsrlibl": [],
+  "postUsrlibl": [],
+  "setIBMiEnvCmd": [],
+  "repository": "https://github.com/rogersonra/cmpf.git",
+  "buildCommand": "makei b"
+}

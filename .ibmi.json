@@ -1,6 +1,7 @@
 {
     "version": "0.0.1",
     "build": {
+        "objlib": "DCUTILS",
         "tgtCcsid": "37"
     } 
 }

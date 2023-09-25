@@ -1,0 +1,11 @@
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+CPC2198: Current library changed to DCUTILS.
+
+>> executing command: CRTSQLRPGI srcstmf('/home/rrogerson/dcutils/QRPGLESRC/PG5000R.PGM.SQLRPGLE') OBJ(/PG5000R) COMMIT(*NONE ) OBJTYPE(*PGM) OPTION(*EVENTF) OUTPUT(*PRINT) TEXT(' ') TGTRLS() DBGVIEW(*SOURCE) RPGPPOPT(*LVL2) COMPILEOPT('TGTCCSID( ) OPTIMIZE() INCDIR(*NONE)')
+>> liblist: QSYS QSYS2 QHLPSYS QUSRSYS QSHELL DCUTILS QTEMP DTCSRC DTCOBJ DTCDTA QGPL RROGERSON
+>> executing time: 2023-09-25-15.27.55
+
+CPD0104: Expression not allowed for parameter OBJ.
+CPF0006: Errors occurred in command.
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
