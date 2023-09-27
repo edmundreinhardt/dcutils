@@ -1,0 +1,162 @@
+TIMESTAMP  0 20230926215511
+PROCESSOR  0 999 1
+FILEID     0 999 000000 022 QTEMP/QSQLPRE(PG5000R) 20230926215511 0
+FILEID     0 001 000000 054 /home/rrogerson/dcutils/qrpglesrc/PG5000R.PGM.SQLRPGLE 20230926210110 0
+FILEEND    0 001 000139
+FILEEND    0 999 000139
+PROCESSOR  0 999 1
+FILEID     0 999 000000 024 QTEMP/QSQLTEMP1(PG5000R) 20230926215512 0
+FILEID     0 001 000000 022 QTEMP/QSQLPRE(PG5000R) 20230926215512 0
+ERROR      0 001 1 000033 000033 000 000033 000 SQL5066 I 00 057 Precompile option NAMING changed by SET OPTION statement.
+ERROR      0 001 1 000033 000033 000 000033 000 SQL5066 I 00 057 Precompile option COMMIT changed by SET OPTION statement.
+ERROR      0 001 1 000033 000033 000 000033 000 SQL5066 I 00 057 Precompile option DLYPRP changed by SET OPTION statement.
+ERROR      0 001 1 000033 000033 000 000033 000 SQL5066 I 00 060 Precompile option CLOSQLCSR changed by SET OPTION statement.
+ERROR      0 001 1 000033 000033 000 000033 000 SQL5066 I 00 060 Precompile option DYNUSRPRF changed by SET OPTION statement.
+EXPANSION  0 001 000000 000000 999 000032 000105
+EXPANSION  0 001 000036 000036 999 000111 000116
+FILEEND    0 001 000139
+FILEEND    0 999 000219
+PROCESSOR  0 000 1
+FILEID     0 001 000000 046 /QSYS.LIB/QTEMP.LIB/QSQLTEMP1.FILE/PG5000R.MBR 20230926215513 0
+ERROR      0 001 1 000020 000020 008 000020 015 RNF3776 W 10 090 External program on prototype for main procedure is not the same as program being created.
+ERROR      0 001 1 000100 000100 009 000100 017 RNF7031 I 00 050 The name or indicator SQL_00001 is not referenced.
+ERROR      0 001 1 000101 000101 009 000101 017 RNF7031 I 00 050 The name or indicator SQL_00002 is not referenced.
+ERROR      0 001 1 000102 000102 009 000102 017 RNF7031 I 00 050 The name or indicator SQL_00003 is not referenced.
+ERROR      0 001 1 000103 000103 009 000103 017 RNF7031 I 00 050 The name or indicator SQL_00004 is not referenced.
+ERROR      0 001 1 000010 000010 008 000010 015 RNF7031 I 00 049 The name or indicator CMPFSQLR is not referenced.
+ERROR      0 001 1 000007 000007 001 000007 000 RNF7066 I 00 052 Record-Format QWHDRFFD not used for input or output.
+ERROR      0 001 1 000096 000096 014 000096 019 RNF7031 I 00 047 The name or indicator SQFAPP is not referenced.
+ERROR      0 001 1 000094 000094 014 000094 019 RNF7031 I 00 047 The name or indicator SQFCRT is not referenced.
+ERROR      0 001 1 000095 000095 014 000095 019 RNF7031 I 00 047 The name or indicator SQFOVR is not referenced.
+ERROR      0 001 1 000093 000093 014 000093 018 RNF7031 I 00 046 The name or indicator SQFRD is not referenced.
+ERROR      0 001 1 000036 000036 011 000036 016 RNF7031 I 00 047 The name or indicator SQLAID is not referenced.
+ERROR      0 001 1 000038 000038 011 000038 016 RNF7031 I 00 047 The name or indicator SQLABC is not referenced.
+ERROR      0 001 1 000040 000040 011 000040 016 RNF7031 I 00 047 The name or indicator SQLCOD is not referenced.
+ERROR      0 001 1 000042 000042 011 000042 016 RNF7031 I 00 047 The name or indicator SQLERL is not referenced.
+ERROR      0 001 1 000044 000044 011 000044 016 RNF7031 I 00 047 The name or indicator SQLERM is not referenced.
+ERROR      0 001 1 000046 000046 011 000046 016 RNF7031 I 00 047 The name or indicator SQLERP is not referenced.
+ERROR      0 001 1 000048 000048 011 000048 016 RNF7031 I 00 047 The name or indicator SQLER1 is not referenced.
+ERROR      0 001 1 000049 000049 011 000049 016 RNF7031 I 00 047 The name or indicator SQLER2 is not referenced.
+ERROR      0 001 1 000050 000050 011 000050 016 RNF7031 I 00 047 The name or indicator SQLER3 is not referenced.
+ERROR      0 001 1 000051 000051 011 000051 016 RNF7031 I 00 047 The name or indicator SQLER4 is not referenced.
+ERROR      0 001 1 000052 000052 011 000052 016 RNF7031 I 00 047 The name or indicator SQLER5 is not referenced.
+ERROR      0 001 1 000054 000054 011 000054 017 RNF7031 I 00 048 The name or indicator SQLERRD is not referenced.
+ERROR      0 001 1 000056 000056 011 000056 016 RNF7031 I 00 047 The name or indicator SQLWN0 is not referenced.
+ERROR      0 001 1 000057 000057 011 000057 016 RNF7031 I 00 047 The name or indicator SQLWN1 is not referenced.
+ERROR      0 001 1 000058 000058 011 000058 016 RNF7031 I 00 047 The name or indicator SQLWN2 is not referenced.
+ERROR      0 001 1 000059 000059 011 000059 016 RNF7031 I 00 047 The name or indicator SQLWN3 is not referenced.
+ERROR      0 001 1 000060 000060 011 000060 016 RNF7031 I 00 047 The name or indicator SQLWN4 is not referenced.
+ERROR      0 001 1 000061 000061 011 000061 016 RNF7031 I 00 047 The name or indicator SQLWN5 is not referenced.
+ERROR      0 001 1 000062 000062 011 000062 016 RNF7031 I 00 047 The name or indicator SQLWN6 is not referenced.
+ERROR      0 001 1 000063 000063 011 000063 016 RNF7031 I 00 047 The name or indicator SQLWN7 is not referenced.
+ERROR      0 001 1 000064 000064 011 000064 016 RNF7031 I 00 047 The name or indicator SQLWN8 is not referenced.
+ERROR      0 001 1 000065 000065 011 000065 016 RNF7031 I 00 047 The name or indicator SQLWN9 is not referenced.
+ERROR      0 001 1 000066 000066 011 000066 016 RNF7031 I 00 047 The name or indicator SQLWNA is not referenced.
+ERROR      0 001 1 000067 000067 011 000067 017 RNF7031 I 00 048 The name or indicator SQLWARN is not referenced.
+ERROR      0 001 1 000069 000069 011 000069 016 RNF7031 I 00 047 The name or indicator SQLSTT is not referenced.
+ERROR      0 001 1 000080 000080 015 000080 026 RNF7031 I 00 051 The name or indicator SQLCLSE... is not referenced.
+ERROR      0 001 1 000084 000084 015 000084 026 RNF7031 I 00 051 The name or indicator SQLCMIT... is not referenced.
+ERROR      0 001 1 000076 000076 015 000076 026 RNF7031 I 00 051 The name or indicator SQLOPEN... is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHALCH is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHALIS is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHALI2 is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHALLC is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHALTY is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHBCHI is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHBCNM is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHBCUH is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHCDFL is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHCDFN is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHCFPS is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHCFPW is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHCHD1 is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHCHD2 is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHCHD3 is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHCHRI is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 046 The name or indicator WHCNT is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHCRTD is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHCSHI is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHCSID is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHCSWD is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHCTNT is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHDBFC is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHDBFI is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHDBLL is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHDBOU is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHDBRC is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHDBRP is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHDBUL is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHDBUN is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHDBWP is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHDCDF is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHDCDL is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHDCOL is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 046 The name or indicator WHDFT is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHDFTL is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHDROW is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHDTTM is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHECDE is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHEWRD is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHFCPL is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHFCPN is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHFCSL is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHFCSN is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHFDSL is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHFILE is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHFIOB is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHFLDB is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHFLDD is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHFLDE is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHFLDG is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHFLDN is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHFLDP is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHFLDT is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 046 The name or indicator WHFMT is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHFOBO is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHFONT is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHFPLN is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHFPPN is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHFPSW is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHFSPS is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHFSPW is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHFTXT is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHFTYP is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 049 The name or indicator WHHDNCOL is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 046 The name or indicator WHHEX is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 046 The name or indicator WHIBO is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 046 The name or indicator WHIDC is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHIFPS is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHIFPW is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHJREF is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHJRF2 is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 046 The name or indicator WHLIB is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 046 The name or indicator WHMAP is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHMAPL is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHMAPS is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHNAME is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHNFLD is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHNIND is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHNRML is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHNULL is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHPNTS is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHPSUD is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHRCDE is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHRCTS is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHRES1 is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHRFIL is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHRFLD is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHRFMT is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHRLEN is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHRLIB is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHRWID is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 046 The name or indicator WHSEP is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 046 The name or indicator WHSEQ is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHSHFT is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHSQLT is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHSYSN is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHTEXT is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHTXRT is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHVARL is not referenced.
+ERROR      0 001 1 000007 000007 007 000007 012 RNF7031 I 00 047 The name or indicator WHVCNE is not referenced.
+ERROR      0 001 1 000008 000008 001 000008 000 RNF7086 I 00 098 RPG handles blocking for file CMPFSQLP. INFDS is updated only when blocks of data are transferred.
+FILEEND    0 001 000219

@@ -6,7 +6,7 @@ dcl &oldlib  *char 10
 dcl &newlib  *char 10
 dcl &qt      *char  1 value('''')
 
-DclPrcOpt dftactgrp(*no) actgrp(*new)
+DclPrcOpt dftactgrp(*no) actgrp('DCAG')
 
 /* Delete the outfile in qtemp */
 Dltf qtemp/dspffd

@@ -1,11 +1,1290 @@
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 CPC2198: Current library changed to DCUTILS.
 
->> executing command: CRTSQLRPGI srcstmf('/home/rrogerson/dcutils/QRPGLESRC/PG5000R.PGM.SQLRPGLE') OBJ(/PG5000R) COMMIT(*NONE ) OBJTYPE(*PGM) OPTION(*EVENTF) OUTPUT(*PRINT) TEXT(' ') TGTRLS() DBGVIEW(*SOURCE) RPGPPOPT(*LVL2) COMPILEOPT('TGTCCSID( ) OPTIMIZE() INCDIR(*NONE)')
+>> executing command: CRTSQLRPGI srcstmf('/home/rrogerson/dcutils/qrpglesrc/PG5000R.PGM.SQLRPGLE') OBJ(DCUTILS/PG5000R) COMMIT(*NONE ) OBJTYPE(*PGM) OPTION(*EVENTF) OUTPUT(*PRINT) TEXT(' ') TGTRLS() DBGVIEW(*SOURCE) RPGPPOPT(*LVL2) COMPILEOPT('TGTCCSID(*JOB ) OPTIMIZE() INCDIR(*NONE)')
 >> liblist: QSYS QSYS2 QHLPSYS QUSRSYS QSHELL DCUTILS QTEMP DTCSRC DTCOBJ DTCDTA QGPL RROGERSON
->> executing time: 2023-09-25-15.27.55
+>> executing time: 2023-09-26-21.55.10
 
-CPD0104: Expression not allowed for parameter OBJ.
-CPF0006: Errors occurred in command.
+RNS9304: Program PG5000R placed in library DCUTILS. 10 highest severity. Created on 09/26/23 at 21:55:17.
+ 5770WDS V7R4M0  190419 RN        IBM ILE RPG             DCUTILS/PG5000R          KT24002C   09/26/23 21:55:11        Page      1
+  Command  . . . . . . . . . . . . :   CRTBNDRPG
+    Issued by  . . . . . . . . . . :     RROGERSON
+  Program  . . . . . . . . . . . . :   PG5000R
+    Library  . . . . . . . . . . . :     DCUTILS
+  Text 'description' . . . . . . . :
+  Source stream file   . . . . . . :   /home/rrogerson/dcutils/qrpglesrc/PG5000R.PGM.SQLR
+                                       PGLE
+    CCSID  . . . . . . . . . . . . :     1208
+  Target CCSID . . . . . . . . . . :   *JOB (37)
+  Text 'description' . . . . . . . :
+  Last Change  . . . . . . . . . . :   09/26/23  21:01:10
+  Generation severity level  . . . :   10
+  Default activation group . . . . :   *YES
+  Compiler options . . . . . . . . :   *XREF      *GEN       *NOSECLVL  *SHOWCPY
+                                       *EXPDDS    *EXT       *NOSHOWSKP *NOSRCSTMT
+                                       *DEBUGIO   *UNREF     *EVENTF
+  Debugging views  . . . . . . . . :   *ALL
+  Debug encryption key . . . . . . :   *NONE
+  Output . . . . . . . . . . . . . :   *PRINT
+  Optimization level . . . . . . . :   *NONE
+  Source listing indentation . . . :   *NONE
+  Type conversion options  . . . . :   *NONE
+  Sort sequence  . . . . . . . . . :   *JOB
+  Language identifier  . . . . . . :   *JOB
+  Replace program  . . . . . . . . :   *YES
+  User profile . . . . . . . . . . :   *USER
+  Authority  . . . . . . . . . . . :   *LIBCRTAUT
+  Truncate numeric . . . . . . . . :   *YES
+  Fix numeric  . . . . . . . . . . :   *NONE
+  Target release . . . . . . . . . :   V7R4M0
+  Allow null values  . . . . . . . :   *NO
+  Define condition names . . . . . :   *NONE
+  Enable performance collection  . :   *PEP
+  Profiling data . . . . . . . . . :   *NOCOL
+  Licensed Internal Code options . :
+  Generate program interface . . . :   *NO
+  Include directory  . . . . . . . :
+  Preprocessor options . . . . . . :   *NORMVCOMMENT *EXPINCLUDE   *NOSEQSRC
+  Output source file . . . . . . . :   QSQLPRE
+    Library  . . . . . . . . . . . :     QTEMP
+  Output source member . . . . . . :   PG5000R
+ 5770WDS V7R4M0  190419 RN        IBM ILE RPG             DCUTILS/PG5000R          KT24002C   09/26/23 21:55:11        Page      2
+Line   <---------------------- Source Specifications ----------------------------------------------------->  Do  Change Src Seq
+Number ....+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8....+....9....+...10  Num Date   Id  Number
+                          S o u r c e   L i s t i n g
+     1 **free                                                                                                               000001
+     2                                                                                                                      000002
+     3 //***************************************************************                                                    000003
+     4 Ctl-Opt option(*nodebugio:*srcstmt)                                                                                  000004
+     5         dftactgrp(*no) actgrp(*caller);                                                                              000005
+     6                                                                                                                      000006
+     7 Dcl-F dspffd Usage(*Input) extfile('QTEMP/DSPFFD');                                                                  000007
+     8 Dcl-F cmpfsqlp Usage(*Output) rename(cmpfsqlr:cmpfile);                                                              000008
+     9                                                                                                                      000009
+    10 Dcl-PR cmpfsqlr  extpgm('CMPFSQLR');                                                                                 000010
+    11   *N             Char(10)   const;                                                                                   000011
+    12   *N             Char(10)   const;                                                                                   000012
+    13   *N             Char(10)   const;                                                                                   000013
+    14   *N             Char(10)   const;                                                                                   000014
+    15   *N             Char(10)   const;                                                                                   000015
+    16   *N             Char(10)   const;                                                                                   000016
+    17   *N             Char(10)   const;                                                                                   000017
+    18   *N             Char(10)   const ;                                                                                  000018
+    19 End-PR;                                                                                                              000019
+    20 Dcl-PI cmpfsqlr;                                                                                                     000020
+    21   file           Char(10)   const;                                                                                   000021
+    22   oldlib         Char(10)   const;                                                                                   000022
+    23   newlib         Char(10)   const;                                                                                   000023
+    24   join1          Char(10)   const;                                                                                   000024
+    25   join2          Char(10)   const;                                                                                   000025
+    26   join3          Char(10)   const;                                                                                   000026
+    27   join4          Char(10)   const;                                                                                   000027
+    28   join5          Char(10)   const;                                                                                   000028
+    29 End-PI;                                                                                                              000029
+    30                                                                                                                      000030
+    31 // Set the SQL environment                                                                                           000031
+    32 Exec SQL                                                                                                             000032
+    33   SET OPTION COMMIT=*none, DYNUSRPRF=*owner, NAMING=*sys,                                                            000033
+    34      DLYPRP=*yes, CLOSQLCSR=*ENDACTGRP;                                                                              000034
+    35 Exec sql                                                                                                             000035
+    36   DELETE FROM cmpfsqlp WHERE file = :file;                                                                           000036
+    37                                                                                                                      000037
+    38 Setll *start dspffd;                                                                                                 000038
+    39 Read dspffd;                                                                                                         000039
+    40 Dow not %Eof();                                                                                                      000040
+    41   seq += 1;                                                                                                          000041
+    42   Select;                                                                                                            000042
+    43     When seq = 1;                                                                                                    000043
+    44       sql_stmt = 'SELECT';                                                                                           000044
+    45       seq = seq;                                                                                                     000045
+    46       Write cmpfile;                                                                                                 000046
+    47       seq += 1;                                                                                                      000047
+    48       // o.ISRECD,n.ISRECD,                                                                                          000048
+    49       sql_stmt = ' o.' + %Trim(whfldi) + ', n.' + %Trim(whfldi)   ;                                                  000049
+    50       seq = seq;                                                                                                     000050
+    51       Write cmpfile;                                                                                                 000051
+    52       sql_stmt = ', case when ' + 'o.' + %Trim(whfldi) + '<> n.' +                                                   000052
+    53            %Trim(whfldi) + ' Then ''   #####'' else '' '' end'   ;                                                   000053
+ 5770WDS V7R4M0  190419 RN        IBM ILE RPG             DCUTILS/PG5000R          KT24002C   09/26/23 21:55:11        Page      3
+Line   <---------------------- Source Specifications ----------------------------------------------------->  Do  Change Src Seq
+Number ....+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8....+....9....+...10  Num Date   Id  Number
+    54       seq += 1;                                                                                                      000054
+    55     Other;                                                                                                           000055
+    56       sql_stmt = ',o.' + %Trim(whfldi) + ', n.' + %Trim(whfldi)  ;                                                   000056
+    57       seq = seq;                                                                                                     000057
+    58       Write cmpfile;                                                                                                 000058
+    59       sql_stmt = ', case when ' + 'o.' + %Trim(whfldi) + '<> n.' +                                                   000059
+    60            %Trim(whfldi) + ' Then ''   #####'' else '' '' end'   ;                                                   000060
+    61       seq += 1;                                                                                                      000061
+    62   Endsl;                                                                                                             000062
+    63   seq = seq;                                                                                                         000063
+    64   Write cmpfile;                                                                                                     000064
+    65                                                                                                                      000065
+    66   Read dspffd;                                                                                                       000066
+    67 Enddo;                                                                                                               000067
+    68                                                                                                                      000068
+    69 // from tyhhold.inacrsp o                                                                                            000069
+    70 seq += 1;                                                                                                            000070
+    71 sql_stmt = '  FROM ' + %Trim(oldlib) + '.' + %Trim(file) + ' o';                                                     000071
+    72 Write cmpfile;                                                                                                       000072
+    73 // join tyhhnew.inacrsp n                                                                                            000073
+    74 seq += 1;                                                                                                            000074
+    75 sql_stmt = '  FULL OUTER JOIN ' + %Trim(newlib) + '.'                                                                000075
+    76                                 + %Trim(file) + ' n';                                                                000076
+    77 Write cmpfile;                                                                                                       000077
+    78 // on o.isinv#=n.isinv# and o.isstr=n.isstr and o.iswhs=n.iswhs                                                      000078
+    79 seq += 1;                                                                                                            000079
+    80 If join1 = *blanks;                                                                                                  000080
+    81   sql_stmt = '    ON rrn(o) = rrn(n)';                                                                               000081
+    82   Write cmpfile;                                                                                                     000082
+    83 Else;                                                                                                                000083
+    84   sql_stmt = '    ON ' + ' o.' + %Trim(join1) + ' = n.' + %Trim(join1);                                              000084
+    85   Write cmpfile;                                                                                                     000085
+    86   If join2 <> *blanks;                                                                                               000086
+    87     seq += 1;                                                                                                        000087
+    88     sql_stmt = '   AND ' + ' o.' + %Trim(join2) +                                                                    000088
+    89                            ' = n.' + %Trim(join2);                                                                   000089
+    90     Write cmpfile;                                                                                                   000090
+    91     If join3 <> *blanks;                                                                                             000091
+    92       seq += 1;                                                                                                      000092
+    93       sql_stmt = '   AND ' + ' o.' + %Trim(join3) +                                                                  000093
+    94                              ' = n.' + %Trim(join3);                                                                 000094
+    95       Write cmpfile;                                                                                                 000095
+    96       If join4 <> *blanks;                                                                                           000096
+    97         seq += 1;                                                                                                    000097
+    98         sql_stmt = '   AND ' + ' o.' + %Trim(join4) +                                                                000098
+    99                                ' = n.' + %Trim(join4);                                                               000099
+   100         Write cmpfile;                                                                                               000100
+   101         If join5 <> *blanks;                                                                                         000101
+   102           seq += 1;                                                                                                  000102
+   103           sql_stmt = '   AND ' + ' o.' + %Trim(join5) +                                                              000103
+   104                                  ' = n.' + %Trim(join5);                                                             000104
+   105           Write cmpfile;                                                                                             000105
+   106         Endif;                                                                                                       000106
+   107       Endif;                                                                                                         000107
+   108     Endif;                                                                                                           000108
+   109   Endif;                                                                                                             000109
+ 5770WDS V7R4M0  190419 RN        IBM ILE RPG             DCUTILS/PG5000R          KT24002C   09/26/23 21:55:11        Page      4
+Line   <---------------------- Source Specifications ----------------------------------------------------->  Do  Change Src Seq
+Number ....+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8....+....9....+...10  Num Date   Id  Number
+   110 Endif;                                                                                                               000110
+   111 // where                                                                                                             000111
+   112 seq += 1;                                                                                                            000112
+   113 sql_stmt = ' WHERE ';                                                                                                000113
+   114 Write cmpfile;                                                                                                       000114
+   115                                                                                                                      000115
+   116 Setll *start dspffd;                                                                                                 000116
+   117 Read dspffd;                                                                                                         000117
+   118 If not %Eof;                                                                                                         000118
+   119   seq += 1;                                                                                                          000119
+   120   sql_stmt = '    o.' + %Trim(whfldi) + ' is null or n.'                                                             000120
+   121                       + %Trim(whfldi) + ' is null or (' ;                                                            000121
+   122   Write cmpfile;                                                                                                     000122
+   123   // o.ISRECD<>n.ISRECD or                                                                                           000123
+   124   seq += 1;                                                                                                          000124
+   125   sql_stmt = '    o.' + %Trim(whfldi) + ' <> n.' + %Trim(whfldi)  ;                                                  000125
+   126   Write cmpfile;                                                                                                     000126
+   127 Endif;                                                                                                               000127
+   128 Dow not %Eof();                                                                                                      000128
+   129   // o.ISRECD<>n.ISRECD or                                                                                           000129
+   130   seq += 1;                                                                                                          000130
+   131   sql_stmt = ' OR o.' + %Trim(whfldi) + ' <> n.' + %Trim(whfldi)  ;                                                  000131
+   132   Write cmpfile;                                                                                                     000132
+   133                                                                                                                      000133
+   134   Read dspffd;                                                                                                       000134
+   135 Enddo;                                                                                                               000135
+   136 seq += 1;                                                                                                            000136
+   137 sql_stmt = ' );';                                                                                                    000137
+   138 Write cmpfile;                                                                                                       000138
+   139 Return;                                                                                                              000139
+       * * * * *   E N D   O F   S O U R C E   * * * * *
+ 5770WDS V7R4M0  190419 RN        IBM ILE RPG             DCUTILS/PG5000R          KT24002C   09/26/23 21:55:11        Page      5
+Line   <---------------------- Data Records -------------------------------------------------------------->      Change Src Seq
+Number ....+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8....+....9....+...10      Date   Id  Number
+                       C o m p i l e   T i m e   D a t a
+    * * * * *   E N D   O F   C O M P I L E   T I M E   D A T A   * * * * *
+ 5770WDS V7R4M0  190419 RN        IBM ILE RPG             DCUTILS/PG5000R          KT24002C   09/26/23 21:55:11        Page      6
+                          M e s s a g e   S u m m a r y
+ Msg id  Sv Number Message text
+       * * * * *   E N D   O F   M E S S A G E   S U M M A R Y   * * * * *
+ 5770WDS V7R4M0  190419 RN        IBM ILE RPG             DCUTILS/PG5000R          KT24002C   09/26/23 21:55:11        Page      7
+                            F i n a l   S u m m a r y
+  Message Totals:
+    Information  (00) . . . . . . . :        0
+    Warning      (10) . . . . . . . :        0
+    Error        (20) . . . . . . . :        0
+    Severe Error (30+)  . . . . . . :        0
+    ---------------------------------  -------
+    Total . . . . . . . . . . . . . :        0
+  Source Totals:
+    Records . . . . . . . . . . . . :      139
+    Specifications  . . . . . . . . :      120
+    Data records  . . . . . . . . . :        0
+    Comments  . . . . . . . . . . . :       18
+         * * * * *   E N D   O F   F I N A L   S U M M A R Y   * * * * *
+Diagnostic check of source is complete. Highest severity is 00.
+          * * * * *   E N D   O F   C O M P I L A T I O N   * * * * *
+5770ST1 V7R4M0 190621            Create SQL ILE RPG Object         PG5000R                     09/26/23 21:55:12          Page     1
+Source type...............RPG
+Object name...............DCUTILS/PG5000R
+Source file...............QTEMP/QSQLPRE
+Member....................*OBJ
+To source file............QTEMP/QSQLTEMP1
+Options...................*LSTDBG
+RPG preprocessor options..*LVL2
+Listing option............*PRINT
+Target release............V7R4M0
+INCLUDE file..............*LIBL/QRPGLESRC
+Commit....................*NONE
+Allow copy of data........*OPTIMIZE
+Close SQL cursor..........*ENDACTGRP
+Allow blocking............*ALLREAD
+Delay PREPARE.............*NO
+Concurrent access
+  resolution..............*DFT
+Generation level..........10
+Printer file..............*LIBL/QSYSPRT
+Date format...............*JOB
+Date separator............*JOB
+Time format...............*HMS
+Time separator ...........*JOB
+Replace...................*YES
+Relational database.......*LOCAL
+User .....................*CURRENT
+RDB connect method........*DUW
+Default collection........*NONE
+Dynamic default
+  collection..............*NO
+Package name..............*OBJLIB/*OBJ
+Path......................*NAMING
+SQL rules.................*DB2
+Created object type.......*PGM
+Debugging view............*SOURCE
+Debugging encryption key..*NONE
+User profile .............*NAMING
+Dynamic user profile......*USER
+Sort sequence.............*JOB
+Language ID...............*JOB
+IBM SQL flagging..........*NOFLAG
+ANS flagging..............*NONE
+Text......................
+Source file CCSID.........37
+Job CCSID.................37
+Decimal result options:
+  Maximum precision.......31
+  Maximum scale...........31
+  Minimum divide scale....0
+DECFLOAT rounding mode....*HALFEVEN
+Compiler options..........TGTCCSID(*JOB ) OPTIMIZE() INCDIR(*NONE)
+Source member changed on 09/26/23  21:55:12
+5770ST1 V7R4M0 190621            Create SQL ILE RPG Object         PG5000R                     09/26/23 21:55:12          Page     2
+Record  *...+... 1 ...+... 2 ...+... 3 ...+... 4 ...+... 5 ...+... 6 ...+... 7 ...+... 8 ...+... 9 ...+... 0   SEQNBR  Last change
+    1   **free                                                                                                 000001   09/26/23
+    2                                                                                                          000002   09/26/23
+    3   //***************************************************************                                      000003   09/26/23
+    4   Ctl-Opt option(*nodebugio:*srcstmt)                                                                    000004   09/26/23
+    5           dftactgrp(*no) actgrp(*caller);                                                                000005   09/26/23
+    6                                                                                                          000006   09/26/23
+    7   Dcl-F dspffd Usage(*Input) extfile('QTEMP/DSPFFD');                                                    000007   09/26/23
+    8   Dcl-F cmpfsqlp Usage(*Output) rename(cmpfsqlr:cmpfile);                                                000008   09/26/23
+    9                                                                                                          000009   09/26/23
+   10   Dcl-PR cmpfsqlr  extpgm('CMPFSQLR');                                                                   000010   09/26/23
+   11     *N             Char(10)   const;                                                                     000011   09/26/23
+   12     *N             Char(10)   const;                                                                     000012   09/26/23
+   13     *N             Char(10)   const;                                                                     000013   09/26/23
+   14     *N             Char(10)   const;                                                                     000014   09/26/23
+   15     *N             Char(10)   const;                                                                     000015   09/26/23
+   16     *N             Char(10)   const;                                                                     000016   09/26/23
+   17     *N             Char(10)   const;                                                                     000017   09/26/23
+   18     *N             Char(10)   const ;                                                                    000018   09/26/23
+   19   End-PR;                                                                                                000019   09/26/23
+   20   Dcl-PI cmpfsqlr;                                                                                       000020   09/26/23
+   21     file           Char(10)   const;                                                                     000021   09/26/23
+   22     oldlib         Char(10)   const;                                                                     000022   09/26/23
+   23     newlib         Char(10)   const;                                                                     000023   09/26/23
+   24     join1          Char(10)   const;                                                                     000024   09/26/23
+   25     join2          Char(10)   const;                                                                     000025   09/26/23
+   26     join3          Char(10)   const;                                                                     000026   09/26/23
+   27     join4          Char(10)   const;                                                                     000027   09/26/23
+   28     join5          Char(10)   const;                                                                     000028   09/26/23
+   29   End-PI;                                                                                                000029   09/26/23
+   30                                                                                                          000030   09/26/23
+   31   // Set the SQL environment                                                                             000031   09/26/23
+   32   Exec SQL                                                                                               000032   09/26/23
+   33     SET OPTION COMMIT=*none, DYNUSRPRF=*owner, NAMING=*sys,                                              000033   09/26/23
+   34        DLYPRP=*yes, CLOSQLCSR=*ENDACTGRP;                                                                000034   09/26/23
+   35   Exec sql                                                                                               000035   09/26/23
+   36     DELETE FROM cmpfsqlp WHERE file = :file;                                                             000036   09/26/23
+   37                                                                                                          000037   09/26/23
+   38   Setll *start dspffd;                                                                                   000038   09/26/23
+   39   Read dspffd;                                                                                           000039   09/26/23
+   40   Dow not %Eof();                                                                                        000040   09/26/23
+   41     seq += 1;                                                                                            000041   09/26/23
+   42     Select;                                                                                              000042   09/26/23
+   43       When seq = 1;                                                                                      000043   09/26/23
+   44         sql_stmt = 'SELECT';                                                                             000044   09/26/23
+   45         seq = seq;                                                                                       000045   09/26/23
+   46         Write cmpfile;                                                                                   000046   09/26/23
+   47         seq += 1;                                                                                        000047   09/26/23
+   48         // o.ISRECD,n.ISRECD,                                                                            000048   09/26/23
+   49         sql_stmt = ' o.' + %Trim(whfldi) + ', n.' + %Trim(whfldi)   ;                                    000049   09/26/23
+   50         seq = seq;                                                                                       000050   09/26/23
+   51         Write cmpfile;                                                                                   000051   09/26/23
+   52         sql_stmt = ', case when ' + 'o.' + %Trim(whfldi) + '<> n.' +                                     000052   09/26/23
+   53              %Trim(whfldi) + ' Then ''   #####'' else '' '' end'   ;                                     000053   09/26/23
+   54         seq += 1;                                                                                        000054   09/26/23
+   55       Other;                                                                                             000055   09/26/23
+   56         sql_stmt = ',o.' + %Trim(whfldi) + ', n.' + %Trim(whfldi)  ;                                     000056   09/26/23
+5770ST1 V7R4M0 190621            Create SQL ILE RPG Object         PG5000R                     09/26/23 21:55:12          Page     3
+Record  *...+... 1 ...+... 2 ...+... 3 ...+... 4 ...+... 5 ...+... 6 ...+... 7 ...+... 8 ...+... 9 ...+... 0   SEQNBR  Last change
+   57         seq = seq;                                                                                       000057   09/26/23
+   58         Write cmpfile;                                                                                   000058   09/26/23
+   59         sql_stmt = ', case when ' + 'o.' + %Trim(whfldi) + '<> n.' +                                     000059   09/26/23
+   60              %Trim(whfldi) + ' Then ''   #####'' else '' '' end'   ;                                     000060   09/26/23
+   61         seq += 1;                                                                                        000061   09/26/23
+   62     Endsl;                                                                                               000062   09/26/23
+   63     seq = seq;                                                                                           000063   09/26/23
+   64     Write cmpfile;                                                                                       000064   09/26/23
+   65                                                                                                          000065   09/26/23
+   66     Read dspffd;                                                                                         000066   09/26/23
+   67   Enddo;                                                                                                 000067   09/26/23
+   68                                                                                                          000068   09/26/23
+   69   // from tyhhold.inacrsp o                                                                              000069   09/26/23
+   70   seq += 1;                                                                                              000070   09/26/23
+   71   sql_stmt = '  FROM ' + %Trim(oldlib) + '.' + %Trim(file) + ' o';                                       000071   09/26/23
+   72   Write cmpfile;                                                                                         000072   09/26/23
+   73   // join tyhhnew.inacrsp n                                                                              000073   09/26/23
+   74   seq += 1;                                                                                              000074   09/26/23
+   75   sql_stmt = '  FULL OUTER JOIN ' + %Trim(newlib) + '.'                                                  000075   09/26/23
+   76                                   + %Trim(file) + ' n';                                                  000076   09/26/23
+   77   Write cmpfile;                                                                                         000077   09/26/23
+   78   // on o.isinv#=n.isinv# and o.isstr=n.isstr and o.iswhs=n.iswhs                                        000078   09/26/23
+   79   seq += 1;                                                                                              000079   09/26/23
+   80   If join1 = *blanks;                                                                                    000080   09/26/23
+   81     sql_stmt = '    ON rrn(o) = rrn(n)';                                                                 000081   09/26/23
+   82     Write cmpfile;                                                                                       000082   09/26/23
+   83   Else;                                                                                                  000083   09/26/23
+   84     sql_stmt = '    ON ' + ' o.' + %Trim(join1) + ' = n.' + %Trim(join1);                                000084   09/26/23
+   85     Write cmpfile;                                                                                       000085   09/26/23
+   86     If join2 <> *blanks;                                                                                 000086   09/26/23
+   87       seq += 1;                                                                                          000087   09/26/23
+   88       sql_stmt = '   AND ' + ' o.' + %Trim(join2) +                                                      000088   09/26/23
+   89                              ' = n.' + %Trim(join2);                                                     000089   09/26/23
+   90       Write cmpfile;                                                                                     000090   09/26/23
+   91       If join3 <> *blanks;                                                                               000091   09/26/23
+   92         seq += 1;                                                                                        000092   09/26/23
+   93         sql_stmt = '   AND ' + ' o.' + %Trim(join3) +                                                    000093   09/26/23
+   94                                ' = n.' + %Trim(join3);                                                   000094   09/26/23
+   95         Write cmpfile;                                                                                   000095   09/26/23
+   96         If join4 <> *blanks;                                                                             000096   09/26/23
+   97           seq += 1;                                                                                      000097   09/26/23
+   98           sql_stmt = '   AND ' + ' o.' + %Trim(join4) +                                                  000098   09/26/23
+   99                                  ' = n.' + %Trim(join4);                                                 000099   09/26/23
+  100           Write cmpfile;                                                                                 000100   09/26/23
+  101           If join5 <> *blanks;                                                                           000101   09/26/23
+  102             seq += 1;                                                                                    000102   09/26/23
+  103             sql_stmt = '   AND ' + ' o.' + %Trim(join5) +                                                000103   09/26/23
+  104                                    ' = n.' + %Trim(join5);                                               000104   09/26/23
+  105             Write cmpfile;                                                                               000105   09/26/23
+  106           Endif;                                                                                         000106   09/26/23
+  107         Endif;                                                                                           000107   09/26/23
+  108       Endif;                                                                                             000108   09/26/23
+  109     Endif;                                                                                               000109   09/26/23
+  110   Endif;                                                                                                 000110   09/26/23
+  111   // where                                                                                               000111   09/26/23
+  112   seq += 1;                                                                                              000112   09/26/23
+5770ST1 V7R4M0 190621            Create SQL ILE RPG Object         PG5000R                     09/26/23 21:55:12          Page     4
+Record  *...+... 1 ...+... 2 ...+... 3 ...+... 4 ...+... 5 ...+... 6 ...+... 7 ...+... 8 ...+... 9 ...+... 0   SEQNBR  Last change
+  113   sql_stmt = ' WHERE ';                                                                                  000113   09/26/23
+  114   Write cmpfile;                                                                                         000114   09/26/23
+  115                                                                                                          000115   09/26/23
+  116   Setll *start dspffd;                                                                                   000116   09/26/23
+  117   Read dspffd;                                                                                           000117   09/26/23
+  118   If not %Eof;                                                                                           000118   09/26/23
+  119     seq += 1;                                                                                            000119   09/26/23
+  120     sql_stmt = '    o.' + %Trim(whfldi) + ' is null or n.'                                               000120   09/26/23
+  121                         + %Trim(whfldi) + ' is null or (' ;                                              000121   09/26/23
+  122     Write cmpfile;                                                                                       000122   09/26/23
+  123     // o.ISRECD<>n.ISRECD or                                                                             000123   09/26/23
+  124     seq += 1;                                                                                            000124   09/26/23
+  125     sql_stmt = '    o.' + %Trim(whfldi) + ' <> n.' + %Trim(whfldi)  ;                                    000125   09/26/23
+  126     Write cmpfile;                                                                                       000126   09/26/23
+  127   Endif;                                                                                                 000127   09/26/23
+  128   Dow not %Eof();                                                                                        000128   09/26/23
+  129     // o.ISRECD<>n.ISRECD or                                                                             000129   09/26/23
+  130     seq += 1;                                                                                            000130   09/26/23
+  131     sql_stmt = ' OR o.' + %Trim(whfldi) + ' <> n.' + %Trim(whfldi)  ;                                    000131   09/26/23
+  132     Write cmpfile;                                                                                       000132   09/26/23
+  133                                                                                                          000133   09/26/23
+  134     Read dspffd;                                                                                         000134   09/26/23
+  135   Enddo;                                                                                                 000135   09/26/23
+  136   seq += 1;                                                                                              000136   09/26/23
+  137   sql_stmt = ' );';                                                                                      000137   09/26/23
+  138   Write cmpfile;                                                                                         000138   09/26/23
+  139   Return;                                                                                                000139   09/26/23
+                                * * * * *  E N D  O F  S O U R C E  * * * * *
+5770ST1 V7R4M0 190621            Create SQL ILE RPG Object         PG5000R                     09/26/23 21:55:12          Page     5
+                                               CROSS REFERENCE
+Data Names                    Define    Reference
+CMPFSQLP                         ****     TABLE
+                                          36
+CMPFSQLR                         10
+FILE                             8        CHARACTER(10)
+                                          36
+FILE                             ****     COLUMN
+                                          36
+FILE                             36       CHARACTER(10) CCSID 37 COLUMN (NOT NULL) IN CMPFSQLP
+JOIN1                            24       CHARACTER(10)
+JOIN2                            25       CHARACTER(10)
+JOIN3                            26       CHARACTER(10)
+JOIN4                            27       CHARACTER(10)
+JOIN5                            28       CHARACTER(10)
+NEWLIB                           23       CHARACTER(10)
+OLDLIB                           22       CHARACTER(10)
+SEQ                              8        DECIMAL(9,0)
+SEQ                              36       INTEGER PRECISION(9,0) COLUMN (NOT NULL) IN CMPFSQLP
+SQL_STMT                         8        VARCHAR(80)
+SQL_STMT                         36       VARCHAR(80) CCSID 37 COLUMN (NOT NULL) IN CMPFSQLP
+WHALCH                           7        CHARACTER(1)
+WHALIS                           7        CHARACTER(30)
+WHALI2                           7        CHARACTER(258)
+WHALLC                           7        DECIMAL(5,0)
+WHALTY                           7        CHARACTER(1)
+WHBCHI                           7        DECIMAL(3,1)
+WHBCNM                           7        CHARACTER(10)
+WHBCUH                           7        DECIMAL(5,2)
+WHCDFL                           7        CHARACTER(10)
+WHCDFN                           7        CHARACTER(10)
+WHCFPS                           7        DECIMAL(4,1)
+WHCFPW                           7        DECIMAL(4,1)
+5770ST1 V7R4M0 190621            Create SQL ILE RPG Object         PG5000R                     09/26/23 21:55:12          Page     6
+                                               CROSS REFERENCE
+WHCHD1                           7        CHARACTER(20)
+WHCHD2                           7        CHARACTER(20)
+WHCHD3                           7        CHARACTER(20)
+WHCHRI                           7        CHARACTER(1)
+WHCNT                            7        DECIMAL(5,0)
+WHCRTD                           7        CHARACTER(7)
+WHCSHI                           7        DECIMAL(3,1)
+WHCSID                           7        DECIMAL(5,0)
+WHCSWD                           7        DECIMAL(3,1)
+WHCTNT                           7        CHARACTER(1)
+WHDBFC                           7        CHARACTER(1)
+WHDBFI                           7        CHARACTER(1)
+WHDBLL                           7        DECIMAL(10,0)
+WHDBOU                           7        CHARACTER(1)
+WHDBRC                           7        CHARACTER(1)
+WHDBRP                           7        CHARACTER(1)
+WHDBUL                           7        CHARACTER(10)
+WHDBUN                           7        CHARACTER(128)
+WHDBWP                           7        CHARACTER(1)
+WHDCDF                           7        CHARACTER(10)
+WHDCDL                           7        CHARACTER(10)
+WHDCOL                           7        DECIMAL(3,0)
+WHDFT                            7        CHARACTER(30)
+WHDFTL                           7        DECIMAL(2,0)
+WHDROW                           7        DECIMAL(3,0)
+WHDTTM                           7        CHARACTER(13)
+WHECDE                           7        CHARACTER(2)
+WHEWRD                           7        CHARACTER(32)
+5770ST1 V7R4M0 190621            Create SQL ILE RPG Object         PG5000R                     09/26/23 21:55:12          Page     7
+                                               CROSS REFERENCE
+WHFCPL                           7        CHARACTER(10)
+WHFCPN                           7        CHARACTER(10)
+WHFCSL                           7        CHARACTER(10)
+WHFCSN                           7        CHARACTER(10)
+WHFDSL                           7        DECIMAL(5,0)
+WHFILE                           7        CHARACTER(10)
+WHFIOB                           7        CHARACTER(1)
+WHFLDB                           7        DECIMAL(5,0)
+WHFLDD                           7        DECIMAL(2,0)
+WHFLDE                           7        CHARACTER(10)
+WHFLDG                           7        DECIMAL(5,0)
+WHFLDI                           7        CHARACTER(10)
+WHFLDN                           7        DECIMAL(5,0)
+WHFLDP                           7        DECIMAL(2,0)
+WHFLDT                           7        CHARACTER(1)
+WHFMT                            7        CHARACTER(4)
+WHFOBO                           7        DECIMAL(5,0)
+WHFONT                           7        CHARACTER(10)
+WHFPLN                           7        CHARACTER(10)
+WHFPPN                           7        CHARACTER(10)
+WHFPSW                           7        DECIMAL(4,1)
+WHFSPS                           7        DECIMAL(4,1)
+WHFSPW                           7        DECIMAL(4,1)
+WHFTXT                           7        CHARACTER(50)
+WHFTYP                           7        CHARACTER(1)
+WHHDNCOL                         7        CHARACTER(1)
+WHHEX                            7        CHARACTER(1)
+WHIBO                            7        DECIMAL(5,0)
+5770ST1 V7R4M0 190621            Create SQL ILE RPG Object         PG5000R                     09/26/23 21:55:12          Page     8
+                                               CROSS REFERENCE
+WHIDC                            7        CHARACTER(1)
+WHIFPS                           7        DECIMAL(4,1)
+WHIFPW                           7        DECIMAL(4,1)
+WHJREF                           7        DECIMAL(2,0)
+WHJRF2                           7        DECIMAL(3,0)
+WHLIB                            7        CHARACTER(10)
+WHMAP                            7        CHARACTER(1)
+WHMAPL                           7        DECIMAL(5,0)
+WHMAPS                           7        DECIMAL(5,0)
+WHNAME                           7        CHARACTER(10)
+WHNFLD                           7        DECIMAL(5,0)
+WHNIND                           7        DECIMAL(2,0)
+WHNRML                           7        CHARACTER(1)
+WHNULL                           7        CHARACTER(1)
+WHPNTS                           7        DECIMAL(4,1)
+WHPSUD                           7        CHARACTER(1)
+WHRCDE                           7        DECIMAL(3,0)
+WHRCTS                           7        CHARACTER(1)
+WHRES1                           7        CHARACTER(2)
+WHRFIL                           7        CHARACTER(10)
+WHRFLD                           7        CHARACTER(10)
+WHRFMT                           7        CHARACTER(10)
+WHRLEN                           7        DECIMAL(5,0)
+WHRLIB                           7        CHARACTER(10)
+WHRWID                           7        CHARACTER(1)
+WHSEP                            7        CHARACTER(1)
+WHSEQ                            7        CHARACTER(13)
+WHSHFT                           7        CHARACTER(1)
+5770ST1 V7R4M0 190621            Create SQL ILE RPG Object         PG5000R                     09/26/23 21:55:12          Page     9
+                                               CROSS REFERENCE
+WHSQLT                           7        CHARACTER(1)
+WHSYSN                           7        CHARACTER(8)
+WHTEXT                           7        CHARACTER(50)
+WHTXRT                           7        DECIMAL(3,0)
+WHVARL                           7        CHARACTER(1)
+WHVCNE                           7        DECIMAL(4,0)
+5770ST1 V7R4M0 190621            Create SQL ILE RPG Object         PG5000R                     09/26/23 21:55:12          Page    10
+                                             DIAGNOSTIC MESSAGES
+MSG ID  SEV  RECORD  TEXT
+SQL5066   0      33  Precompile option NAMING changed by SET OPTION statement.
+SQL5066   0      33  Precompile option COMMIT changed by SET OPTION statement.
+SQL5066   0      33  Precompile option DLYPRP changed by SET OPTION statement.
+SQL5066   0      33  Precompile option CLOSQLCSR changed by SET OPTION
+                     statement.
+SQL5066   0      33  Precompile option DYNUSRPRF changed by SET OPTION
+                     statement.
+                    Message Summary
+  Total     Info   Warning      Error   Severe  Terminal
+      5        5         0          0        0         0
+00 level severity errors found in source
+  139 Source records processed
+                               * * * * *  E N D  O F  L I S T I N G  * * * * *
+ 5770WDS V7R4M0  190419 RN        IBM ILE RPG             DCUTILS/PG5000R          KT24002C   09/26/23 21:55:13        Page      1
+  Command  . . . . . . . . . . . . :   CRTBNDRPG
+    Issued by  . . . . . . . . . . :     RROGERSON
+  Program  . . . . . . . . . . . . :   PG5000R
+    Library  . . . . . . . . . . . :     DCUTILS
+  Text 'description' . . . . . . . :
+  Source stream file   . . . . . . :   /QSYS.LIB/QTEMP.LIB/QSQLTEMP1.FILE/PG5000R.MBR
+    CCSID  . . . . . . . . . . . . :     37
+  Target CCSID . . . . . . . . . . :   *JOB (37)
+  Text 'description' . . . . . . . :
+  Last Change  . . . . . . . . . . :   09/26/23  21:55:13
+  Generation severity level  . . . :   10
+  Default activation group . . . . :   *YES
+  Compiler options . . . . . . . . :   *XREF      *GEN       *NOSECLVL  *SHOWCPY
+                                       *EXPDDS    *EXT       *NOSHOWSKP *NOSRCSTMT
+                                       *DEBUGIO   *UNREF     *EVENTF
+  Debugging views  . . . . . . . . :   *ALL
+  Debug encryption key . . . . . . :   *NONE
+  Output . . . . . . . . . . . . . :   *PRINT
+  Optimization level . . . . . . . :   *NONE
+  Source listing indentation . . . :   *NONE
+  Type conversion options  . . . . :   *NONE
+  Sort sequence  . . . . . . . . . :   *JOB
+  Language identifier  . . . . . . :   *JOB
+  Replace program  . . . . . . . . :   *YES
+  User profile . . . . . . . . . . :   *USER
+  Authority  . . . . . . . . . . . :   *LIBCRTAUT
+  Truncate numeric . . . . . . . . :   *YES
+  Fix numeric  . . . . . . . . . . :   *NONE
+  Target release . . . . . . . . . :   V7R4M0
+  Allow null values  . . . . . . . :   *NO
+  Define condition names . . . . . :   *NONE
+  Enable performance collection  . :   *PEP
+  Profiling data . . . . . . . . . :   *NOCOL
+  Licensed Internal Code options . :
+  Generate program interface . . . :   *NO
+  Include directory  . . . . . . . :
+  Preprocessor options . . . . . . :   *NONE
+ 5770WDS V7R4M0  190419 RN        IBM ILE RPG             DCUTILS/PG5000R          KT24002C   09/26/23 21:55:13        Page      2
+Line   <---------------------- Source Specifications ----------------------------------------------------->  Do  Change Src Seq
+Number ....+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8....+....9....+...10  Num Date   Id  Number
+                          S o u r c e   L i s t i n g
+     1 **free                                                                                                               000001
+     2                                                                                                                      000002
+     3 //***************************************************************                                                    000003
+     4 Ctl-Opt option(*nodebugio:*srcstmt)                                                                                  000004
+000005         dftactgrp(*no) actgrp(*caller);                                                                              000005
+000006                                                                                                                      000006
+        *--------------------------------------------------------------------*
+        * Compiler Options in Effect:                                        *
+        *--------------------------------------------------------------------*
+        *  Text 'description' . . . . . . . :                                *
+        *                                                                    *
+        *  Generation severity level  . . . :   10                           *
+        *  Default activation group . . . . :   *NO                          *
+        *  Compiler options . . . . . . . . :   *XREF      *GEN              *
+        *                                       *NOSECLVL  *SHOWCPY          *
+        *                                       *EXPDDS    *EXT              *
+        *                                       *NOSHOWSKP *SRCSTMT          *
+        *                                       *NODEBUGIO *UNREF            *
+        *                                       *EVENTF                      *
+        *  Optimization level . . . . . . . :   *NONE                        *
+        *  Source listing indentation . . . :   *NONE                        *
+        *  Type conversion options  . . . . :   *NONE                        *
+        *  Sort sequence  . . . . . . . . . :   *JOB                         *
+        *  Language identifier  . . . . . . :   *JOB                         *
+        *  User profile . . . . . . . . . . :   *USER                        *
+        *  Authority  . . . . . . . . . . . :   *LIBCRTAUT                   *
+        *  Truncate numeric . . . . . . . . :   *YES                         *
+        *  Fix numeric  . . . . . . . . . . :   *NONE                        *
+        *  Allow null values  . . . . . . . :   *NO                          *
+        *  Storage model . . .  . . . . . . :   *SNGLVL                      *
+        *  Binding directory from Command . :   *NONE                        *
+        *  Binding directory from Source  . :   *NONE                        *
+        *  Activation group . . . . . . . . :   *CALLER                      *
+        *  Enable performance collection  . :   *PEP                         *
+        *  Profiling data . . . . . . . . . :   *NOCOL                       *
+        *  Generate program interface . . . :   *NO                          *
+        *  REQUIRE PROTOTYPE FOR EXPORT . . :                                *
+        *--------------------------------------------------------------------*
+000007 Dcl-F dspffd Usage(*Input) extfile('QTEMP/DSPFFD');                                                                  000007
+        *--------------------------------------------------------------------------------------------*
+        *                               RPG name         External name                               *
+        * File name. . . . . . . . . :  DSPFFD           DCUTILS/DSPFFD                              *
+        * Record format(s) . . . . . :  QWHDRFFD         QWHDRFFD                                    *
+        *--------------------------------------------------------------------------------------------*
+000008 Dcl-F cmpfsqlp Usage(*Output) rename(cmpfsqlr:cmpfile);                                                              000008
+        *--------------------------------------------------------------------------------------------*
+        *                               RPG name         External name                               *
+        * File name. . . . . . . . . :  CMPFSQLP         DCUTILS/CMPFSQLP                            *
+        * Record format(s) . . . . . :  CMPFILE          CMPFSQLR                                    *
+        *--------------------------------------------------------------------------------------------*
+ 5770WDS V7R4M0  190419 RN        IBM ILE RPG             DCUTILS/PG5000R          KT24002C   09/26/23 21:55:13        Page      3
+Line   <---------------------- Source Specifications ----------------------------------------------------->  Do  Change Src Seq
+Number ....+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8....+....9....+...10  Num Date   Id  Number
+000009                                                                                                                      000009
+000010 Dcl-PR cmpfsqlr  extpgm('CMPFSQLR');                                                                                 000010
+000011   *N             Char(10)   const;                                                                                   000011
+000012   *N             Char(10)   const;                                                                                   000012
+000013   *N             Char(10)   const;                                                                                   000013
+000014   *N             Char(10)   const;                                                                                   000014
+000015   *N             Char(10)   const;                                                                                   000015
+000016   *N             Char(10)   const;                                                                                   000016
+000017   *N             Char(10)   const;                                                                                   000017
+000018   *N             Char(10)   const ;                                                                                  000018
+000019 End-PR;                                                                                                              000019
+000020 Dcl-PI cmpfsqlr;                                                                                                     000020
+======>       aaaaaaaa
+*RNF3776 10 a      000020  External program on prototype for main procedure is not the
+                           same as program being created.
+000021   file           Char(10)   const;                                                                                   000021
+000022   oldlib         Char(10)   const;                                                                                   000022
+000023   newlib         Char(10)   const;                                                                                   000023
+000024   join1          Char(10)   const;                                                                                   000024
+000025   join2          Char(10)   const;                                                                                   000025
+000026   join3          Char(10)   const;                                                                                   000026
+000027   join4          Char(10)   const;                                                                                   000027
+000028   join5          Char(10)   const;                                                                                   000028
+000029 End-PI;                                                                                                              000029
+000030                                                                                                                      000030
+000031 // Set the SQL environment                                                                                           000031
+000032        /SET CCSID(*CHAR:*JOBRUNMIX)                                                                                  000032
+000033        // SQL COMMUNICATION AREA                                                //SQL                                000033
+000034        DCL-DS SQLCA;                                                            //SQL                                000034
+000035          SQLCAID CHAR(8) INZ(X'0000000000000000');                              //SQL                                000035
+000036           SQLAID CHAR(8) OVERLAY(SQLCAID);                                      //SQL                                000036
+000037          SQLCABC INT(10);                                                       //SQL                                000037
+000038           SQLABC BINDEC(9) OVERLAY(SQLCABC);                                    //SQL                                000038
+000039          SQLCODE INT(10);                                                       //SQL                                000039
+000040           SQLCOD BINDEC(9) OVERLAY(SQLCODE);                                    //SQL                                000040
+000041          SQLERRML INT(5);                                                       //SQL                                000041
+000042           SQLERL BINDEC(4) OVERLAY(SQLERRML);                                   //SQL                                000042
+000043          SQLERRMC CHAR(70);                                                     //SQL                                000043
+000044           SQLERM CHAR(70) OVERLAY(SQLERRMC);                                    //SQL                                000044
+000045          SQLERRP CHAR(8);                                                       //SQL                                000045
+000046           SQLERP CHAR(8) OVERLAY(SQLERRP);                                      //SQL                                000046
+000047          SQLERR CHAR(24);                                                       //SQL                                000047
+000048           SQLER1 BINDEC(9) OVERLAY(SQLERR:*NEXT);                               //SQL                                000048
+000049           SQLER2 BINDEC(9) OVERLAY(SQLERR:*NEXT);                               //SQL                                000049
+000050           SQLER3 BINDEC(9) OVERLAY(SQLERR:*NEXT);                               //SQL                                000050
+000051           SQLER4 BINDEC(9) OVERLAY(SQLERR:*NEXT);                               //SQL                                000051
+000052           SQLER5 BINDEC(9) OVERLAY(SQLERR:*NEXT);                               //SQL                                000052
+000053           SQLER6 BINDEC(9) OVERLAY(SQLERR:*NEXT);                               //SQL                                000053
+000054           SQLERRD INT(10) DIM(6) OVERLAY(SQLERR);                               //SQL                                000054
+000055          SQLWRN CHAR(11);                                                       //SQL                                000055
+000056           SQLWN0 CHAR(1) OVERLAY(SQLWRN:*NEXT);                                 //SQL                                000056
+000057           SQLWN1 CHAR(1) OVERLAY(SQLWRN:*NEXT);                                 //SQL                                000057
+000058           SQLWN2 CHAR(1) OVERLAY(SQLWRN:*NEXT);                                 //SQL                                000058
+000059           SQLWN3 CHAR(1) OVERLAY(SQLWRN:*NEXT);                                 //SQL                                000059
+ 5770WDS V7R4M0  190419 RN        IBM ILE RPG             DCUTILS/PG5000R          KT24002C   09/26/23 21:55:13        Page      4
+Line   <---------------------- Source Specifications ----------------------------------------------------->  Do  Change Src Seq
+Number ....+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8....+....9....+...10  Num Date   Id  Number
+000060           SQLWN4 CHAR(1) OVERLAY(SQLWRN:*NEXT);                                 //SQL                                000060
+000061           SQLWN5 CHAR(1) OVERLAY(SQLWRN:*NEXT);                                 //SQL                                000061
+000062           SQLWN6 CHAR(1) OVERLAY(SQLWRN:*NEXT);                                 //SQL                                000062
+000063           SQLWN7 CHAR(1) OVERLAY(SQLWRN:*NEXT);                                 //SQL                                000063
+000064           SQLWN8 CHAR(1) OVERLAY(SQLWRN:*NEXT);                                 //SQL                                000064
+000065           SQLWN9 CHAR(1) OVERLAY(SQLWRN:*NEXT);                                 //SQL                                000065
+000066           SQLWNA CHAR(1) OVERLAY(SQLWRN:*NEXT);                                 //SQL                                000066
+000067           SQLWARN CHAR(1) DIM(11) OVERLAY(SQLWRN);                              //SQL                                000067
+000068          SQLSTATE CHAR(5);                                                      //SQL                                000068
+000069           SQLSTT CHAR(5) OVERLAY(SQLSTATE);                                     //SQL                                000069
+000070        END-DS SQLCA;                                                            //SQL                                000070
+000071        DCL-PR SQLROUTE_CALL EXTPGM(SQLROUTE);                                   //SQL                                000071
+000072          CA LIKEDS(SQLCA);                                                      //SQL                                000072
+000073          *N BINDEC(4) OPTIONS(*NOPASS);                                         //SQL                                000073
+000074          *N CHAR(1) OPTIONS(*NOPASS);                                           //SQL                                000074
+000075        END-PR SQLROUTE_CALL;                                                    //SQL                                000075
+000076        DCL-PR SQLOPEN_CALL EXTPGM(SQLOPEN);                                     //SQL                                000076
+000077          CA LIKEDS(SQLCA);                                                      //SQL                                000077
+000078          *N BINDEC(4);                                                          //SQL                                000078
+000079        END-PR SQLOPEN_CALL;                                                     //SQL                                000079
+000080        DCL-PR SQLCLSE_CALL EXTPGM(SQLCLSE);                                     //SQL                                000080
+000081          CA LIKEDS(SQLCA);                                                      //SQL                                000081
+000082          *N BINDEC(4);                                                          //SQL                                000082
+000083        END-PR SQLCLSE_CALL;                                                     //SQL                                000083
+000084        DCL-PR SQLCMIT_CALL EXTPGM(SQLCMIT);                                     //SQL                                000084
+000085          CA LIKEDS(SQLCA);                                                      //SQL                                000085
+000086          *N BINDEC(4);                                                          //SQL                                000086
+000087        END-PR SQLCMIT_CALL;                                                     //SQL                                000087
+000088        /RESTORE CCSID(*CHAR)                                                                                         000088
+000089        DCL-C SQLROUTE CONST('QSYS/QSQROUTE');                                   //SQL                                000089
+000090        DCL-C SQLOPEN CONST('QSYS/QSQROUTE');                                    //SQL                                000090
+000091        DCL-C SQLCLSE CONST('QSYS/QSQLCLSE');                                    //SQL                                000091
+000092        DCL-C SQLCMIT CONST('QSYS/QSQLCMIT');                                    //SQL                                000092
+000093        DCL-C SQFRD CONST(2);                                                    //SQL                                000093
+000094        DCL-C SQFCRT CONST(8);                                                   //SQL                                000094
+000095        DCL-C SQFOVR CONST(16);                                                  //SQL                                000095
+000096        DCL-C SQFAPP CONST(32);                                                  //SQL                                000096
+000097 **END-FREE                                                                                                           000097
+Line   <---------------------- Source Specifications ----------------------------><---- Comments ----> Do  Page  Change Src Seq
+Number ....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8....+....9....+...10 Num Line  Date   Id  Number
+000098 D                 DS                                                       DELETE                                    000098
+000099 D  SQL_00000              1      2B 0 INZ(128)                             length of header                          000099
+000100 D  SQL_00001              3      4B 0 INZ(4)                               statement number                          000100
+000101 D  SQL_00002              5      8U 0 INZ(0)                               invocation mark                           000101
+000102 D  SQL_00003              9      9A   INZ('0') CCSID(*JOBRUNMIX)           data is okay                              000102
+000103 D  SQL_00004             10    128A   CCSID(*JOBRUNMIX)                    end of header                             000103
+000104 D  SQL_00005            129    138A   CCSID(*JOBRUNMIX)                    FILE                                      000104
+Line   <---------------------- Source Specifications ----------------------------------------------------->  Do  Change Src Seq
+Number ....+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8....+....9....+...10  Num Date   Id  Number
+000105 **FREE                                                                                                               000105
+000106 //*Exec SQL                                                                                                          000106
+000107 //*  SET OPTION COMMIT=*none, DYNUSRPRF=*owner, NAMING=*sys,                                                         000107
+ 5770WDS V7R4M0  190419 RN        IBM ILE RPG             DCUTILS/PG5000R          KT24002C   09/26/23 21:55:13        Page      5
+Line   <---------------------- Source Specifications ----------------------------------------------------->  Do  Change Src Seq
+Number ....+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8....+....9....+...10  Num Date   Id  Number
+000108 //*     DLYPRP=*yes, CLOSQLCSR=*ENDACTGRP;                                                                           000108
+000109 //*Exec sql                                                                                                          000109
+000110 //*  DELETE FROM cmpfsqlp WHERE file = :file;                                                                        000110
+000001=IQWHDRFFD                                                                                                           1000001
+        *--------------------------------------------------------------------------------------------*                     1
+        * RPG record format  . . . . :  QWHDRFFD                                                     *                     1
+        * External format  . . . . . :  QWHDRFFD : DCUTILS/DSPFFD                                    *                     1
+        *--------------------------------------------------------------------------------------------*                     1
+000002=I                             A    1   10  WHFILE                          File                                     1000002
+000003=I                             A   11   20  WHLIB                           Library                                  1000003
+000004=I                             A   21   27  WHCRTD                          File creation date: century/date         1000004
+000005=I                             A   28   28  WHFTYP                          Type of file: P=Physical, L=Logical, D=Device
+000006=I                             S   29   33 0WHCNT                           Number of record formats                 1000006
+000007=I                             A   34   46  WHDTTM                          Retrieval date: century/date/time        1000007
+000008=I                             A   47   56  WHNAME                          Record format                            1000008
+000009=I                             A   57   69  WHSEQ                           Format level identifier                  1000009
+000010=I                             A   70  119  WHTEXT                          Format text description                  1000010
+000011=I                             S  120  124 0WHFLDN                          Number of fields and indicators          1000011
+000012=I                             S  125  129 0WHRLEN                          Record format length                     1000012
+000013=I                             A  130  139  WHFLDI                          Internal field name                      1000013
+000014=I                             A  140  149  WHFLDE                          External field name                      1000014
+000015=I                             S  150  154 0WHFOBO                          Output buffer position                   1000015
+000016=I                             S  155  159 0WHIBO                           Input buffer position                    1000016
+000017=I                             S  160  164 0WHFLDB                          Field length in bytes                    1000017
+000018=I                             S  165  166 0WHFLDD                          Number of digits                         1000018
+000019=I                             S  167  168 0WHFLDP                          Decimal positions to right of decimal    1000019
+000020=I                             A  169  218  WHFTXT                          Field text description                   1000020
+000021=I                             S  219  221 0WHRCDE                          32=Data Type,64=Name, 128=None           1000021
+000022=I                             A  222  231  WHRFIL                          Reference file                           1000022
+000023=I                             A  232  241  WHRLIB                          Reference library                        1000023
+000024=I                             A  242  251  WHRFMT                          Reference record format                  1000024
+000025=I                             A  252  261  WHRFLD                          Reference field                          1000025
+000026=I                             A  262  281  WHCHD1                          Column heading 1                         1000026
+000027=I                             A  282  301  WHCHD2                          Column heading 2                         1000027
+000028=I                             A  302  321  WHCHD3                          Column heading 3                         1000028
+000029=I                             A  322  322  WHFLDT                          Type: B,A,S,P,F,O,J,E,H,L,T,Z,G,1,2,3,4,5,6,7
+000030=I                             A  323  323  WHFIOB                          I/O attribute: I=Input,O=Output,B=Both,N=Neither
+000031=I                             A  324  325  WHECDE                          Edit code                                1000031
+000032=I                             A  326  357  WHEWRD                          Edit word: Truncated after 30 characters
+000033=I                             S  358  361 0WHVCNE                          Number of validity checks                1000033
+000034=I                             S  362  366 0WHNFLD                          Number of fields                         1000034
+000035=I                             S  367  368 0WHNIND                          Number of indicators                     1000035
+000036=I                             A  369  369  WHSHFT                          Keyboard shift                           1000036
+000037=I                             A  370  370  WHALTY                          Character field may be DBSC activated: N=No, Y=Yes
+000038=I                             A  371  400  WHALIS                          Alternative field name                   1000038
+000039=I                             S  401  402 0WHJREF                          Join reference to JFILE -1 = see WHJRF2
+000040=I                             S  403  404 0WHDFTL                          DFT value length: -1=Greater than 30 characters
+000041=I                             A  405  434  WHDFT                           DFT value: Truncated after 30 characters
+000042=I                             A  435  435  WHCHRI                          Character Id changes allowed: N=No, Y=Yes
+000043=I                             A  436  436  WHCTNT                          Translation table used:  N=No, Y=Yes     1000043
+000044=I                             A  437  446  WHFONT                          Font identifier                          1000044
+000045=I                             S  447  449 1WHCSWD                          Character size width                     1000045
+000046=I                             S  450  452 1WHCSHI                          Character size height                    1000046
+000047=I                             A  453  462  WHBCNM                          Barcode name                             1000047
+ 5770WDS V7R4M0  190419 RN        IBM ILE RPG             DCUTILS/PG5000R          KT24002C   09/26/23 21:55:13        Page      6
+Line   <---------------------- Source Specifications ----------------------------------------------------->  Do  Change Src Seq
+Number ....+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8....+....9....+...10  Num Date   Id  Number
+000048=I                             S  463  465 1WHBCHI                          Barcode height:0=No height defined,-2=use WHBCUH
+000049=I                             A  466  466  WHMAP                           Substring specified: N=No, Y=Yes         1000049
+000050=I                             S  467  471 0WHMAPS                          Substring starting position              1000050
+000051=I                             S  472  476 0WHMAPL                          Substring number of bytes (characters, if graphic)
+000052=I                             A  477  484  WHSYSN                          System Name (Source System, if file is DDM)
+000053=I                             A  485  486  WHRES1                          Reserved                                 1000053
+000054=I                             A  487  487  WHSQLT                          SQL file type:0=None,T=TABLE,I=INDEX,V=VIEW,M=MQT
+000055=I                             A  488  488  WHHEX                           Hexadecimal:  Y=Yes                      1000055
+000056=I                             P  489  491 1WHPNTS                          Point size: 0 = none                     1000056
+000057=I                             P  492  494 0WHCSID                          Coded Character set Identifier           1000057
+000058=I                             A  495  498  WHFMT                           Date and time format parameters          1000058
+000059=I                             A  499  499  WHSEP                           '/', '-', '.', ',', ':', ' ', or 'J'=*JOB
+000060=I                             A  500  500  WHVARL                          Variable length field: N=No, Y=Yes       1000060
+000061=I                             P  501  503 0WHALLC                          Allocated length                         1000061
+000062=I                             A  504  504  WHNULL                          Allow Null Value: N=No,Y=Yes             1000062
+000063=I                             A  505  514  WHFCSN                          Font character set, blank = none         1000063
+000064=I                             A  515  524  WHFCSL                          Char set lib, blank = none               1000064
+000065=I                             A  525  534  WHFCPN                          Font code page, blank = none             1000065
+000066=I                             A  535  544  WHFCPL                          Code page lib, blank = none              1000066
+000067=I                             A  545  554  WHCDFN                          Coded Font, blank = none                 1000067
+000068=I                             A  555  564  WHCDFL                          Coded font lib, blank = none             1000068
+000069=I                             A  565  574  WHDCDF                          DBCS Coded Font, blank = none            1000069
+000070=I                             A  575  584  WHDCDL                          DBCS font lib, blank = none              1000070
+000071=I                             P  585  586 0WHTXRT                          Degree of text rotation, -1 = not specified
+000072=I                             S  587  591 0WHFLDG                          Field length in characters, 0 = not graphic
+000073=I                             S  592  596 0WHFDSL                          Alternate field length                   1000073
+000074=I                             P  597  599 1WHFSPS                          Font character set point size. 0=*NONE
+000075=I                             P  600  602 1WHCFPS                          Coded font point size. 0=*NONE           1000075
+000076=I                             P  603  605 1WHIFPS                          DBCS Coded font point size. 0=*NONE      1000076
+000077=I                             P  606  611 0WHDBLL                          LOB field length                         1000077
+000078=I                             A  612  739  WHDBUN                          User-defined type name                   1000078
+000079=I                             A  740  749  WHDBUL                          User-defined type library                1000079
+000080=I                             A  750  750  WHDBFC                          0=No control, 1=File control             1000080
+000081=I                             A  751  751  WHDBFI                          0=Selective, 1=All, blank=not valid      1000081
+000082=I                             A  752  752  WHDBRP                          0=Database, 1=File system, blank=not valid
+000083=I                             A  753  753  WHDBWP                          0=Blocked, 1=File system, blank=not valid
+000084=I                             A  754  754  WHDBRC                          0=No, 1=Yes, blank=not valid             1000084
+000085=I                             A  755  755  WHDBOU                          0=Delete, 1=Restore, blank=not valid     1000085
+000086=I                             A  756  756  WHPSUD                          0=*NOCONVERT, 1=*CONVERT                 1000086
+000087=I                             S  757  761 2WHBCUH                          Barcode height using UOM                 1000087
+000088=I                             P  762  764 1WHFPSW                          Font point size width. 0=Not used        1000088
+000089=I                             P  765  767 1WHFSPW                          Font character set point size width. 0=Not used
+000090=I                             P  768  770 1WHCFPW                          Coded font point size width. 0=Not used
+000091=I                             P  771  773 1WHIFPW                          DBCS Coded font point size width. 0=Not used
+000092=I                             A  774  774  WHRWID                          ROWID specified. Y=Yes, N=No             1000092
+000093=I                             A  775  775  WHIDC                           Identity column. Y=Yes, N=No             1000093
+000094=I                             S  776  778 0WHDROW                          Display row                              1000094
+000095=I                             S  779  781 0WHDCOL                          Display column                           1000095
+000096=I                             A  782 1039  WHALI2                          Alternative field name                   1000096
+000097=I                             A 1040 1040  WHALCH                          Alternate length 0=Characters,1=Display positions
+000098=I                             A 1041 1041  WHNRML                          Field is normalized, 0=No, 1=Yes         1000098
+000099=I                             S 1042 1044 0WHJRF2                          Join reference to JFILE 3 digits         1000099
+000100=I                             A 1045 1045  WHHDNCOL                        Implicitly Hidden. 0=No, 1=Yes           1000100
+000101=I                             A 1046 1046  WHRCTS                          0=No, 1=Yes, blank= not valid            1000101
+000102=I                             A 1047 1056  WHFPPN                          Field Procedure program name             1000102
+000103=I                             A 1057 1066  WHFPLN                          Field Procedure library name             1000103
+ 5770WDS V7R4M0  190419 RN        IBM ILE RPG             DCUTILS/PG5000R          KT24002C   09/26/23 21:55:13        Page      7
+Line   <---------------------- Source Specifications ----------------------------------------------------->  Do  Change Src Seq
+Number ....+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8....+....9....+...10  Num Date   Id  Number
+000111           SQL_00005 = FILE;                                                     //SQL                                000111
+000112           SQLER6 = -4;                                                          //SQL 4                              000112
+000113           SQLROUTE_CALL(                                                        //SQL                                000113
+000114                SQLCA                                                            //SQL                                000114
+000115              : SQL_00000                                                        //SQL                                000115
+000116           );                                                                    //SQL                                000116
+000117                                                                                                                      000117
+000118 Setll *start dspffd;                                                                                                 000118
+000119 Read dspffd;                                                                                                         000119
+000120 Dow not %Eof();                                                                                      B01             000120
+000121   seq += 1;                                                                                           01             000121
+000122   Select;                                                                                            B02             000122
+000123     When seq = 1;                                                                                    X02             000123
+000124       sql_stmt = 'SELECT';                                                                            02             000124
+000125       seq = seq;                                                                                      02             000125
+000126       Write cmpfile;                                                                                  02             000126
+000127       seq += 1;                                                                                       02             000127
+000128       // o.ISRECD,n.ISRECD,                                                                                          000128
+000129       sql_stmt = ' o.' + %Trim(whfldi) + ', n.' + %Trim(whfldi)   ;                                   02             000129
+000130       seq = seq;                                                                                      02             000130
+000131       Write cmpfile;                                                                                  02             000131
+000132       sql_stmt = ', case when ' + 'o.' + %Trim(whfldi) + '<> n.' +                                    02             000132
+000133            %Trim(whfldi) + ' Then ''   #####'' else '' '' end'   ;                                    02             000133
+000134       seq += 1;                                                                                       02             000134
+000135     Other;                                                                                           X02             000135
+000136       sql_stmt = ',o.' + %Trim(whfldi) + ', n.' + %Trim(whfldi)  ;                                    02             000136
+000137       seq = seq;                                                                                      02             000137
+000138       Write cmpfile;                                                                                  02             000138
+000139       sql_stmt = ', case when ' + 'o.' + %Trim(whfldi) + '<> n.' +                                    02             000139
+000140            %Trim(whfldi) + ' Then ''   #####'' else '' '' end'   ;                                    02             000140
+000141       seq += 1;                                                                                       02             000141
+000142   Endsl;                                                                                             E02             000142
+000143   seq = seq;                                                                                          01             000143
+000144   Write cmpfile;                                                                                      01             000144
+000145                                                                                                                      000145
+000146   Read dspffd;                                                                                        01             000146
+000147 Enddo;                                                                                               E01             000147
+000148                                                                                                                      000148
+000149 // from tyhhold.inacrsp o                                                                                            000149
+000150 seq += 1;                                                                                                            000150
+000151 sql_stmt = '  FROM ' + %Trim(oldlib) + '.' + %Trim(file) + ' o';                                                     000151
+000152 Write cmpfile;                                                                                                       000152
+000153 // join tyhhnew.inacrsp n                                                                                            000153
+000154 seq += 1;                                                                                                            000154
+000155 sql_stmt = '  FULL OUTER JOIN ' + %Trim(newlib) + '.'                                                                000155
+000156                                 + %Trim(file) + ' n';                                                                000156
+000157 Write cmpfile;                                                                                                       000157
+000158 // on o.isinv#=n.isinv# and o.isstr=n.isstr and o.iswhs=n.iswhs                                                      000158
+000159 seq += 1;                                                                                                            000159
+000160 If join1 = *blanks;                                                                                  B01             000160
+000161   sql_stmt = '    ON rrn(o) = rrn(n)';                                                                01             000161
+000162   Write cmpfile;                                                                                      01             000162
+000163 Else;                                                                                                X01             000163
+000164   sql_stmt = '    ON ' + ' o.' + %Trim(join1) + ' = n.' + %Trim(join1);                               01             000164
+000165   Write cmpfile;                                                                                      01             000165
+000166   If join2 <> *blanks;                                                                               B02             000166
+ 5770WDS V7R4M0  190419 RN        IBM ILE RPG             DCUTILS/PG5000R          KT24002C   09/26/23 21:55:13        Page      8
+Line   <---------------------- Source Specifications ----------------------------------------------------->  Do  Change Src Seq
+Number ....+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8....+....9....+...10  Num Date   Id  Number
+000167     seq += 1;                                                                                         02             000167
+000168     sql_stmt = '   AND ' + ' o.' + %Trim(join2) +                                                     02             000168
+000169                            ' = n.' + %Trim(join2);                                                    02             000169
+000170     Write cmpfile;                                                                                    02             000170
+000171     If join3 <> *blanks;                                                                             B03             000171
+000172       seq += 1;                                                                                       03             000172
+000173       sql_stmt = '   AND ' + ' o.' + %Trim(join3) +                                                   03             000173
+000174                              ' = n.' + %Trim(join3);                                                  03             000174
+000175       Write cmpfile;                                                                                  03             000175
+000176       If join4 <> *blanks;                                                                           B04             000176
+000177         seq += 1;                                                                                     04             000177
+000178         sql_stmt = '   AND ' + ' o.' + %Trim(join4) +                                                 04             000178
+000179                                ' = n.' + %Trim(join4);                                                04             000179
+000180         Write cmpfile;                                                                                04             000180
+000181         If join5 <> *blanks;                                                                         B05             000181
+000182           seq += 1;                                                                                   05             000182
+000183           sql_stmt = '   AND ' + ' o.' + %Trim(join5) +                                               05             000183
+000184                                  ' = n.' + %Trim(join5);                                              05             000184
+000185           Write cmpfile;                                                                              05             000185
+000186         Endif;                                                                                       E05             000186
+000187       Endif;                                                                                         E04             000187
+000188     Endif;                                                                                           E03             000188
+000189   Endif;                                                                                             E02             000189
+000190 Endif;                                                                                               E01             000190
+000191 // where                                                                                                             000191
+000192 seq += 1;                                                                                                            000192
+000193 sql_stmt = ' WHERE ';                                                                                                000193
+000194 Write cmpfile;                                                                                                       000194
+000195                                                                                                                      000195
+000196 Setll *start dspffd;                                                                                                 000196
+000197 Read dspffd;                                                                                                         000197
+000198 If not %Eof;                                                                                         B01             000198
+000199   seq += 1;                                                                                           01             000199
+000200   sql_stmt = '    o.' + %Trim(whfldi) + ' is null or n.'                                              01             000200
+000201                       + %Trim(whfldi) + ' is null or (' ;                                             01             000201
+000202   Write cmpfile;                                                                                      01             000202
+000203   // o.ISRECD<>n.ISRECD or                                                                                           000203
+000204   seq += 1;                                                                                           01             000204
+000205   sql_stmt = '    o.' + %Trim(whfldi) + ' <> n.' + %Trim(whfldi)  ;                                   01             000205
+000206   Write cmpfile;                                                                                      01             000206
+000207 Endif;                                                                                               E01             000207
+000208 Dow not %Eof();                                                                                      B01             000208
+000209   // o.ISRECD<>n.ISRECD or                                                                                           000209
+000210   seq += 1;                                                                                           01             000210
+000211   sql_stmt = ' OR o.' + %Trim(whfldi) + ' <> n.' + %Trim(whfldi)  ;                                   01             000211
+000212   Write cmpfile;                                                                                      01             000212
+000213                                                                                                                      000213
+000214   Read dspffd;                                                                                        01             000214
+000215 Enddo;                                                                                               E01             000215
+000216 seq += 1;                                                                                                            000216
+000217 sql_stmt = ' );';                                                                                                    000217
+000218 Write cmpfile;                                                                                                       000218
+000219 Return;                                                                                                              000219
+000001=OCMPFILE                                                                                                            2000001
+        *--------------------------------------------------------------------------------------------*                     2
+        * RPG record format  . . . . :  CMPFILE                                                      *                     2
+ 5770WDS V7R4M0  190419 RN        IBM ILE RPG             DCUTILS/PG5000R          KT24002C   09/26/23 21:55:13        Page      9
+Line   <---------------------- Source Specifications ----------------------------------------------------->  Do  Change Src Seq
+Number ....+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8....+....9....+...10  Num Date   Id  Number
+        * External format  . . . . . :  CMPFSQLR : DCUTILS/CMPFSQLP                                  *                     2
+        *--------------------------------------------------------------------------------------------*                     2
+000002=O                       FILE                10A CHAR       10              file                                     2000002
+000003=O                       SEQ                 14B BIN4      9,0              sequence                                 2000003
+000004=O                       SQL_STMT            96A VCHR       80              SQL statement                            2000004
+       * * * * *   E N D   O F   S O U R C E   * * * * *
+ 5770WDS V7R4M0  190419 RN        IBM ILE RPG             DCUTILS/PG5000R          KT24002C   09/26/23 21:55:13        Page     10
+          A d d i t i o n a l   D i a g n o s t i c   M e s s a g e s
+ Msg id  Sv   Statement    Message text
+*RNF7066 00        000007  Record-Format QWHDRFFD not used for input or output.
+*RNF7086 00        000008  RPG handles blocking for file CMPFSQLP. INFDS is updated
+                           only when blocks of data are transferred.
+ * * * * *   E N D   O F   A D D I T I O N A L   D I A G N O S T I C   M E S S A G E S   * * * * *
+                 O u t p u t   B u f f e r   P o s i t i o n s
+Line   Start End   Field or Constant
+Number Pos   Pos
+   2000002     1    10 FILE
+   2000003    11    14 SEQ
+   2000004    15    96 SQL_STMT
+ * * * * *   E N D   O F   O U T P U T   B U F F E R   P O S I T I O N   *  * * * *
+ 5770WDS V7R4M0  190419 RN        IBM ILE RPG             DCUTILS/PG5000R          KT24002C   09/26/23 21:55:13        Page     11
+                          C r o s s   R e f e r e n c e
+      File and Record References:
+         File              Device             References (D=Defined)
+           Record
+         CMPFSQLP          DISK                   000008D
+           CMPFILE                                000008      000126      000131      000138
+                                                  000144      000152      000157      000162
+                                                  000165      000170      000175      000180
+                                                  000185      000194      000202      000206
+                                                  000212      000218     2000001
+         DSPFFD            DISK                   000007D     000118      000119      000146
+                                                  000196      000197      000214
+           QWHDRFFD                               000007D    1000001
+      Global Field References:
+         Field             Attributes         References (D=Defined M=Modified)
+*RNF7031 CMPFSQLR          PROTOTYPE              000010D
+         FILE              A(10)                  000021D     000111      000151      000156
+                           BASED(_QRNL_PRM+)     2000002
+         JOIN1             A(10)                  000024D     000160      000164      000164
+                           BASED(_QRNL_PRM+)
+         JOIN2             A(10)                  000025D     000166      000168      000169
+                           BASED(_QRNL_PRM+)
+         JOIN3             A(10)                  000026D     000171      000173      000174
+                           BASED(_QRNL_PRM+)
+         JOIN4             A(10)                  000027D     000176      000178      000179
+                           BASED(_QRNL_PRM+)
+         JOIN5             A(10)                  000028D     000181      000183      000184
+                           BASED(_QRNL_PRM+)
+         NEWLIB            A(10)                  000023D     000155
+                           BASED(_QRNL_PRM+)
+         OLDLIB            A(10)                  000022D     000151
+                           BASED(_QRNL_PRM+)
+         SEQ               P(9,0)                 000121M     000123      000125M     000125
+                                                  000127M     000130M     000130      000134M
+                                                  000137M     000137      000141M     000143M
+                                                  000143      000150M     000154M     000159M
+                                                  000167M     000172M     000177M     000182M
+                                                  000192M     000199M     000204M     000210M
+                                                  000216M    2000003
+*RNF7031 SQFAPP            CONST                  000096D
+*RNF7031 SQFCRT            CONST                  000094D
+*RNF7031 SQFOVR            CONST                  000095D
+*RNF7031 SQFRD             CONST                  000093D
+         SQL_STMT          A(80)                  000124M     000129M     000132M     000136M
+                           VARYING(2)             000139M     000151M     000155M     000161M
+                                                  000164M     000168M     000173M     000178M
+                                                  000183M     000193M     000200M     000205M
+                                                  000211M     000217M    2000004
+         SQL_00000         B(4,0)                 000099D     000115
+*RNF7031 SQL_00001         B(4,0)                 000100D
+*RNF7031 SQL_00002         U(10,0)                000101D
+*RNF7031 SQL_00003         A(1)                   000102D
+*RNF7031 SQL_00004         A(119)                 000103D
+         SQL_00005         A(10)                  000104D     000111M
+ 5770WDS V7R4M0  190419 RN        IBM ILE RPG             DCUTILS/PG5000R          KT24002C   09/26/23 21:55:13        Page     12
+*RNF7031 SQLABC            B(9,0)                 000038D
+*RNF7031 SQLAID            A(8)                   000036D
+         SQLCA             DS(136)                000034D     000072      000077      000081
+                                                  000085      000114
+         SQLCABC           I(10,0)                000037D     000038
+         SQLCAID           A(8)                   000035D     000036
+         SQLCLSE           CONST                  000080      000091D
+*RNF7031 SQLCLSE_CALL      PROTOTYPE              000080D
+         SQLCMIT           CONST                  000084      000092D
+*RNF7031 SQLCMIT_CALL      PROTOTYPE              000084D
+*RNF7031 SQLCOD            B(9,0)                 000040D
+         SQLCODE           I(10,0)                000039D     000040
+*RNF7031 SQLERL            B(4,0)                 000042D
+*RNF7031 SQLERM            A(70)                  000044D
+*RNF7031 SQLERP            A(8)                   000046D
+         SQLERR            A(24)                  000047D     000048      000049      000050
+                                                  000051      000052      000053      000054
+*RNF7031 SQLERRD(6)        I(10,0)                000054D
+         SQLERRMC          A(70)                  000043D     000044
+         SQLERRML          I(5,0)                 000041D     000042
+         SQLERRP           A(8)                   000045D     000046
+*RNF7031 SQLER1            B(9,0)                 000048D
+*RNF7031 SQLER2            B(9,0)                 000049D
+*RNF7031 SQLER3            B(9,0)                 000050D
+*RNF7031 SQLER4            B(9,0)                 000051D
+*RNF7031 SQLER5            B(9,0)                 000052D
+         SQLER6            B(9,0)                 000053D     000112M
+         SQLOPEN           CONST                  000076      000090D
+*RNF7031 SQLOPEN_CALL      PROTOTYPE              000076D
+         SQLROUTE          CONST                  000071      000089D
+         SQLROUTE_CALL     PROTOTYPE              000071D     000113M
+         SQLSTATE          A(5)                   000068D     000069
+*RNF7031 SQLSTT            A(5)                   000069D
+*RNF7031 SQLWARN(11)       A(1)                   000067D
+*RNF7031 SQLWNA            A(1)                   000066D
+*RNF7031 SQLWN0            A(1)                   000056D
+*RNF7031 SQLWN1            A(1)                   000057D
+*RNF7031 SQLWN2            A(1)                   000058D
+*RNF7031 SQLWN3            A(1)                   000059D
+*RNF7031 SQLWN4            A(1)                   000060D
+*RNF7031 SQLWN5            A(1)                   000061D
+*RNF7031 SQLWN6            A(1)                   000062D
+*RNF7031 SQLWN7            A(1)                   000063D
+*RNF7031 SQLWN8            A(1)                   000064D
+*RNF7031 SQLWN9            A(1)                   000065D
+         SQLWRN            A(11)                  000055D     000056      000057      000058
+                                                  000059      000060      000061      000062
+                                                  000063      000064      000065      000066
+                                                  000067
+*RNF7031 WHALCH            A(1)                  1000097D
+*RNF7031 WHALIS            A(30)                 1000038D
+*RNF7031 WHALI2            A(258)                1000096D
+*RNF7031 WHALLC            P(5,0)                1000061D
+*RNF7031 WHALTY            A(1)                  1000037D
+*RNF7031 WHBCHI            P(3,1)                1000048D
+*RNF7031 WHBCNM            A(10)                 1000047D
+*RNF7031 WHBCUH            P(5,2)                1000087D
+*RNF7031 WHCDFL            A(10)                 1000068D
+ 5770WDS V7R4M0  190419 RN        IBM ILE RPG             DCUTILS/PG5000R          KT24002C   09/26/23 21:55:13        Page     13
+*RNF7031 WHCDFN            A(10)                 1000067D
+*RNF7031 WHCFPS            P(4,1)                1000075D
+*RNF7031 WHCFPW            P(4,1)                1000090D
+*RNF7031 WHCHD1            A(20)                 1000026D
+*RNF7031 WHCHD2            A(20)                 1000027D
+*RNF7031 WHCHD3            A(20)                 1000028D
+*RNF7031 WHCHRI            A(1)                  1000042D
+*RNF7031 WHCNT             P(5,0)                1000006D
+*RNF7031 WHCRTD            A(7)                  1000004D
+*RNF7031 WHCSHI            P(3,1)                1000046D
+*RNF7031 WHCSID            P(5,0)                1000057D
+*RNF7031 WHCSWD            P(3,1)                1000045D
+*RNF7031 WHCTNT            A(1)                  1000043D
+*RNF7031 WHDBFC            A(1)                  1000080D
+*RNF7031 WHDBFI            A(1)                  1000081D
+*RNF7031 WHDBLL            P(10,0)               1000077D
+*RNF7031 WHDBOU            A(1)                  1000085D
+*RNF7031 WHDBRC            A(1)                  1000084D
+*RNF7031 WHDBRP            A(1)                  1000082D
+*RNF7031 WHDBUL            A(10)                 1000079D
+*RNF7031 WHDBUN            A(128)                1000078D
+*RNF7031 WHDBWP            A(1)                  1000083D
+*RNF7031 WHDCDF            A(10)                 1000069D
+*RNF7031 WHDCDL            A(10)                 1000070D
+*RNF7031 WHDCOL            P(3,0)                1000095D
+*RNF7031 WHDFT             A(30)                 1000041D
+*RNF7031 WHDFTL            P(2,0)                1000040D
+*RNF7031 WHDROW            P(3,0)                1000094D
+*RNF7031 WHDTTM            A(13)                 1000007D
+*RNF7031 WHECDE            A(2)                  1000031D
+*RNF7031 WHEWRD            A(32)                 1000032D
+*RNF7031 WHFCPL            A(10)                 1000066D
+*RNF7031 WHFCPN            A(10)                 1000065D
+*RNF7031 WHFCSL            A(10)                 1000064D
+*RNF7031 WHFCSN            A(10)                 1000063D
+*RNF7031 WHFDSL            P(5,0)                1000073D
+*RNF7031 WHFILE            A(10)                 1000002D
+*RNF7031 WHFIOB            A(1)                  1000030D
+*RNF7031 WHFLDB            P(5,0)                1000017D
+*RNF7031 WHFLDD            P(2,0)                1000018D
+*RNF7031 WHFLDE            A(10)                 1000014D
+*RNF7031 WHFLDG            P(5,0)                1000072D
+         WHFLDI            A(10)                 1000013D     000129      000129      000132
+                                                  000133      000136      000136      000139
+                                                  000140      000200      000201      000205
+                                                  000205      000211      000211
+*RNF7031 WHFLDN            P(5,0)                1000011D
+*RNF7031 WHFLDP            P(2,0)                1000019D
+*RNF7031 WHFLDT            A(1)                  1000029D
+*RNF7031 WHFMT             A(4)                  1000058D
+*RNF7031 WHFOBO            P(5,0)                1000015D
+*RNF7031 WHFONT            A(10)                 1000044D
+*RNF7031 WHFPLN            A(10)                 1000103D
+*RNF7031 WHFPPN            A(10)                 1000102D
+*RNF7031 WHFPSW            P(4,1)                1000088D
+*RNF7031 WHFSPS            P(4,1)                1000074D
+*RNF7031 WHFSPW            P(4,1)                1000089D
+*RNF7031 WHFTXT            A(50)                 1000020D
+ 5770WDS V7R4M0  190419 RN        IBM ILE RPG             DCUTILS/PG5000R          KT24002C   09/26/23 21:55:13        Page     14
+*RNF7031 WHFTYP            A(1)                  1000005D
+*RNF7031 WHHDNCOL          A(1)                  1000100D
+*RNF7031 WHHEX             A(1)                  1000055D
+*RNF7031 WHIBO             P(5,0)                1000016D
+*RNF7031 WHIDC             A(1)                  1000093D
+*RNF7031 WHIFPS            P(4,1)                1000076D
+*RNF7031 WHIFPW            P(4,1)                1000091D
+*RNF7031 WHJREF            P(2,0)                1000039D
+*RNF7031 WHJRF2            P(3,0)                1000099D
+*RNF7031 WHLIB             A(10)                 1000003D
+*RNF7031 WHMAP             A(1)                  1000049D
+*RNF7031 WHMAPL            P(5,0)                1000051D
+*RNF7031 WHMAPS            P(5,0)                1000050D
+*RNF7031 WHNAME            A(10)                 1000008D
+*RNF7031 WHNFLD            P(5,0)                1000034D
+*RNF7031 WHNIND            P(2,0)                1000035D
+*RNF7031 WHNRML            A(1)                  1000098D
+*RNF7031 WHNULL            A(1)                  1000062D
+*RNF7031 WHPNTS            P(4,1)                1000056D
+*RNF7031 WHPSUD            A(1)                  1000086D
+*RNF7031 WHRCDE            P(3,0)                1000021D
+*RNF7031 WHRCTS            A(1)                  1000101D
+*RNF7031 WHRES1            A(2)                  1000053D
+*RNF7031 WHRFIL            A(10)                 1000022D
+*RNF7031 WHRFLD            A(10)                 1000025D
+*RNF7031 WHRFMT            A(10)                 1000024D
+*RNF7031 WHRLEN            P(5,0)                1000012D
+*RNF7031 WHRLIB            A(10)                 1000023D
+*RNF7031 WHRWID            A(1)                  1000092D
+*RNF7031 WHSEP             A(1)                  1000059D
+*RNF7031 WHSEQ             A(13)                 1000009D
+*RNF7031 WHSHFT            A(1)                  1000036D
+*RNF7031 WHSQLT            A(1)                  1000054D
+*RNF7031 WHSYSN            A(8)                  1000052D
+*RNF7031 WHTEXT            A(50)                 1000010D
+*RNF7031 WHTXRT            P(3,0)                1000071D
+*RNF7031 WHVARL            A(1)                  1000060D
+*RNF7031 WHVCNE            P(4,0)                1000033D
+      Indicator References:
+         Indicator                            References (D=Defined M=Modified)
+       * * * * *   E N D   O F   C R O S S   R E F E R E N C E   * * * * *
+ 5770WDS V7R4M0  190419 RN        IBM ILE RPG             DCUTILS/PG5000R          KT24002C   09/26/23 21:55:13        Page     15
+                      E x t e r n a l   R e f e r e n c e s
+      Statically bound procedures:
+         Procedure                            References
+         No references in the source.
+      Imported fields:
+         Field             Attributes         Defined
+         No references in the source.
+      Exported fields:
+         Field             Attributes         Defined
+         No references in the source.
+   * * * * *   E N D   O F   E X T E R N A L   R E F E R E N C E S   * * * * *
+ 5770WDS V7R4M0  190419 RN        IBM ILE RPG             DCUTILS/PG5000R          KT24002C   09/26/23 21:55:13        Page     16
+                          M e s s a g e   S u m m a r y
+ Msg id  Sv Number Message text
+*RNF7031 00    138 The name or indicator is not referenced.
+*RNF7066 00      1 Record-Format name of Externally-Described file is not used.
+*RNF7086 00      1 RPG handles blocking for the file. INFDS is updated only when
+                   blocks of data are transferred.
+*RNF3776 10      1 External program on prototype for main procedure is not the
+                   same as program being created.
+       * * * * *   E N D   O F   M E S S A G E   S U M M A R Y   * * * * *
+ 5770WDS V7R4M0  190419 RN        IBM ILE RPG             DCUTILS/PG5000R          KT24002C   09/26/23 21:55:13        Page     17
+                            F i n a l   S u m m a r y
+  Message Totals:
+    Information  (00) . . . . . . . :      140
+    Warning      (10) . . . . . . . :        1
+    Error        (20) . . . . . . . :        0
+    Severe Error (30+)  . . . . . . :        0
+    ---------------------------------  -------
+    Total . . . . . . . . . . . . . :      141
+  Source Totals:
+    Records . . . . . . . . . . . . :      326
+    Specifications  . . . . . . . . :      297
+    Data records  . . . . . . . . . :        0
+    Comments  . . . . . . . . . . . :       24
+         * * * * *   E N D   O F   F I N A L   S U M M A R Y   * * * * *
+Program PG5000R placed in library DCUTILS. 10 highest severity. Created on 09/26/23 at 21:55:17.
+          * * * * *   E N D   O F   C O M P I L A T I O N   * * * * *
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 

@@ -1,1 +1,1 @@
-SUBDIRS = QSQLSRC QRPGLESRC QCMDSRC
+SUBDIRS = qsqlsrc qrpglesrc qcmdsrc

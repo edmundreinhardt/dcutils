@@ -1,13 +1,13 @@
 [
     {
-        "cmd": "CRTSQLRPGI srcstmf('/home/rrogerson/dcutils/QRPGLESRC/PG5000R.PGM.SQLRPGLE') OBJ(/PG5000R) COMMIT(*NONE ) OBJTYPE(*PGM) OPTION(*EVENTF) OUTPUT(*PRINT) TEXT(' ') TGTRLS() DBGVIEW(*SOURCE) RPGPPOPT(*LVL2) COMPILEOPT('TGTCCSID( ) OPTIMIZE() INCDIR(*NONE)')",
-        "cmd_time": "2023-09-25-15.27.55",
+        "cmd": "CRTSQLRPGI srcstmf('/home/rrogerson/dcutils/qrpglesrc/PG5000R.PGM.SQLRPGLE') OBJ(DCUTILS/PG5000R) COMMIT(*NONE ) OBJTYPE(*PGM) OPTION(*EVENTF) OUTPUT(*PRINT) TEXT(' ') TGTRLS() DBGVIEW(*SOURCE) RPGPPOPT(*LVL2) COMPILEOPT('TGTCCSID(*JOB ) OPTIMIZE() INCDIR(*NONE)')",
+        "cmd_time": "2023-09-26-21.55.10",
         "msgs": [
             {
                 "msgid": "CPC2198",
                 "type": "COMPLETION",
                 "severity": 0,
-                "message_time": "2023-09-25-15.27.50.189037",
+                "message_time": "2023-09-26-21.55.05.518720",
                 "message_text": "Current library changed to DCUTILS.",
                 "second_level": "&N Cause . . . . . :   The current library in the library list was changed to DCUTILS.",
                 "from_program": "QLICHLLE",
@@ -21,34 +21,8 @@
             }
         ],
         "object": "PG5000R.PGM",
-        "source": "/home/rrogerson/dcutils/QRPGLESRC/PG5000R.PGM.SQLRPGLE",
+        "source": "/home/rrogerson/dcutils/qrpglesrc/PG5000R.PGM.SQLRPGLE",
         "output": "/home/rrogerson/dcutils/.logs/PG5000R.PGM.splf",
-        "failed": true
-    },
-    {
-        "cmd": "CRTCMD CMD(/CMPF) srcstmf('/home/rrogerson/dcutils/QCMDSRC/CMPF.CMDSRC') PGM(PG5000C) VLDCKR(*NONE) PMTFILE(*NONE) HLPPNLGRP(CMPF) HLPID(CMPF) AUT() ALLOW() TEXT('Compare file with SQL')",
-        "cmd_time": "2023-09-25-15.28.28",
-        "msgs": [
-            {
-                "msgid": "CPC2198",
-                "type": "COMPLETION",
-                "severity": 0,
-                "message_time": "2023-09-25-15.28.22.709084",
-                "message_text": "Current library changed to DCUTILS.",
-                "second_level": "&N Cause . . . . . :   The current library in the library list was changed to DCUTILS.",
-                "from_program": "QLICHLLE",
-                "from_library": "QSYS",
-                "from_instruction": "01A3",
-                "to_program": "QP2USER2",
-                "to_library": "QSYS",
-                "to_module": "QP2API",
-                "to_procedure": "runpase_common__FiPvT2",
-                "to_instruction": "4"
-            }
-        ],
-        "object": "CMPF.CMD",
-        "source": "/home/rrogerson/dcutils/QCMDSRC/CMPF.CMDSRC",
-        "output": "/home/rrogerson/dcutils/.logs/CMPF.splf",
-        "failed": true
+        "failed": false
     }
 ]
